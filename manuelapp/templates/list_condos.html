@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="static/images/fondo-faq.jpg">
+    <link rel="icon" href="static/images/fondo-faq.ico" type="image/x-icon">
+
+
+    <title>Luxury Vacation Rentals with Ocean and Mountain Views in Puerto Vallarta </title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Experience luxury vacation rentals in Puerto Vallarta, Mexico, featuring stunning ocean and mountain views. Enjoy top-notch amenities including security,  swimming pool, jacuzzi, and a gym within the building. Book your perfect getaway.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="luxury vacation rentals, Puerto Vallarta, ocean view rentals, mountain view rentals, secure vacation homes, swimming pool, jacuzzi, gym, luxury properties Puerto Vallarta, vacation rentals Mexico">
+
+    <!-- Meta Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Luxury Vacation Rentals with Ocean and Mountain Views in Puerto Vallarta">
+
+    <meta property="og:description" content="Experience luxury vacation rentals in Puerto Vallarta, Mexico, featuring stunning ocean and mountain views. Enjoy top-notch amenities including security, a swimming pool, jacuzzi, and a gym within the building. Book your perfect getaway.">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxury Vacation Rentals with Ocean and Mountain Views in Puerto Vallarta">
+    <meta name="twitter:description" content="Experience luxury vacation rentals in Puerto Vallarta, Mexico, featuring stunning ocean and mountain views. Enjoy top-notch amenities including security, a swimming pool, jacuzzi, and a gym within the building. Book your perfect getaway.">
+    <meta name="twitter:image" content="static/images/fondo-faq.jpg">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "name": "Luxury Vacation Rentals with Ocean and Mountain Views in Puerto Vallarta",
+  "description": "Experience luxury vacation rentals in Puerto Vallarta, Mexico, featuring stunning ocean and mountain views. Enjoy top-notch amenities including security, a swimming pool, jacuzzi, and a gym within the building.",
+  "url": "https://allyn.pythonanywhere.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Puerto Vallarta",
+    "addressRegion": "Jalisco",
+    "addressCountry": "Mexico"
+  },
+  "image": "https://allyn.pythonanywhere.com/static/images/fondo-faq.jpg",
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Ocean View",
+      "value": "true"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Mountain View",
+      "value": "true"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Security",
+      "value": "true"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Swimming Pool",
+      "value": "true"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Jacuzzi",
+      "value": "true"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Gym",
+      "value": "true"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "seasonal"
+  }
+}
+</script>
+<!-- FIN DE META TAGS -->
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{%static '/css/list_condos.css'%}">
+    <link rel="stylesheet" href="{% static 'css/styles_menu.css' %}">
+</head>
+<body>
+    <div class="slider-container">
+        <div class="menu-overlay">
+            <nav>
+            <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="icono"> <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#ffffff"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg></label>
+    
+            <div class="menu">
+                <ul>
+                    <!-- <li class="poner_margin_open_menu_mobile"><a href="{% url 'index'%}">HOME</a></li> -->
+                   <!-- <li class="poner_margin_open_menu_mobile"><a href="{%url 'index'%}">RENTALS</a></li>   -->
+                    <li class="poner_margin_open_menu_mobile no-wrap1"><a href="{%url  'property_management' %}">POPERTY MANAGEMENT</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap2"><a href="{% url 'private_chef'%}">PRIVATE CHEF</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap2" ><a href="{%url 'about_us'%}">ABOUT US</a></li>
+                    <li class="poner_margin_open_menu_mobile"><a href="{%url 'contact'%}">CONTACT</a></li>
+                    
+                        
+                            
+                    
+                </ul>
+            </div>
+        </nav>
+          
+        
+        
+        </div>
+        
+    
+    
+        
+        <img 
+             srcset="{% static 'images/image_desk1.jpg' %} 1700w,
+                     {% static 'images_mobile/image_mobile9.png' %} 1170w" class="active"
+             alt="Image 1 " 
+             sizes="(max-width: 1800px) 1700w,
+                    (max-width: 768px) 1170w">
+    
+        <img src="{% static 'images/image_desk2.jpg' %}" alt="Image 2">
+        <img src="{% static 'images/image_desk3.jpg' %}" alt="Image 3">
+    
+        <img 
+             srcset="{% static 'images/image_desk4.png' %} 1700w,
+                     {% static 'images_mobile/image_mobile4.jpg' %} 1170w"
+             alt="Image 4" 
+             sizes="(max-width: 1800px) 1700w,
+                    (max-width: 768px) 1170w">
+    
+        <img src="{% static 'images/image_desk5.jpg' %}" alt="Image 5">
+    
+        <img 
+            srcset="{% static 'images/image_desk6.jpg' %} 1700w,
+                    {% static 'images_mobile/image_mobile6.jpg' %} 1170w"
+            alt="Image 6" 
+            sizes="(max-width: 1800px) 1700w,
+                (max-width: 768px) 1170w">
+    
+        <img src="{% static 'images/image_desk7.jpg' %}" alt="Image 7">
+    
+    
+          <img 
+            srcset="{% static 'images/image_desk8.jpg' %} 1700w,
+                    {% static 'images_mobile/image_mobile8.png' %} 1170w" 
+            alt="Image 6" 
+            sizes="(max-width: 1800px) 1700w,
+                (max-width: 768px) 1170w">
+    
+                <img 
+                srcset="{% static 'images/image_desk9.jpg' %} 1700w,
+                        {% static 'images_mobile/image_mobile9.jpg' %} 1170w"
+                alt="Image 6" 
+                sizes="(max-width: 1800px) 1700w,
+                    (max-width: 768px) 1170w">
+    
+                    <img 
+                    srcset="{% static 'images/image_desk10.jpg' %} 1700w,
+                            {% static 'images_mobile/image_mobile10.jpg' %} 1170w"
+                    alt="Image 6" 
+                    sizes="(max-width: 1800px) 1700w,
+                        (max-width: 768px) 1170w">
+       
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-container img');
+        const totalImages = images.length;
+    
+        const nextImage = () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+    
+        setInterval(nextImage, 4000); // Change image every 3 seconds
+    </script>
+    <!-- ############################################################# FIN HEADER ##########################################################-->
+
+
+    <div class="caja_mayor_body">   
+    <div class="container" >
+        {% if condos %}
+            {% for condo in condos %}
+                <div class="card" >
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% if condo.imagen1 and condo.imagen1.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen1.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen1.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen2 and condo.imagen2.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen2.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen2.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen3 and condo.imagen3.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen3.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen3.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen4 and condo.imagen4.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen4.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen4.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen5 and condo.imagen5.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen5.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen5.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen6 and condo.imagen6.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen6.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}}" src="{{ condo.imagen6.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen7 and condo.imagen7.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen7.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen7.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen8 and condo.imagen8.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen8.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}"  src="{{ condo.imagen8.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 id="h2_azul">{{ condo.development_name }}</h2>
+                        <p>Neighborhood: <strong>{{ condo.neighborhood }}</strong></p>
+                        <p>Bedrooms: <trong>{{ condo.bedrooms }}</strong>
+                            <p>Bedrooms: <trong>{{ condo.bathrooms }}</strong>
+
+                        <table>
+                            <caption>Prices per Night</caption>
+                            <thead>
+                                <tr>
+                                    <th>Season</th>
+                                    <th>Price (USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-aos="fade-up">
+                                    <td>Holiday Season:</td>
+                                    <td>USD {{ condo.holiday_season }}</td>
+                                </tr>
+                                <tr data-aos="fade-up">
+                                    <td>Winter and Spring:</td>
+                                    <td>USD {{ condo.winter_and_spring }}</td>
+                                </tr>
+                                <tr data-aos="fade-up">
+                                    <td>Summer and Fall:</td>
+                                    <td>USD {{ condo.summer_and_fall }}</td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+
+                        <a   href="{% url 'condo_detail' condo.id %}">View More Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="color: #B0B0B0;">No condos available at the moment.</p>
+        {% endif %}
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize AOS
+            AOS.init();
+
+            // Initialize Swiper
+            var swiper = new Swiper('.swiper', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+            });
+
+            // Initialize Fancybox
+            $(".fancybox").fancybox({
+                infobar: false,
+                buttons: [
+                    'slideShow',
+                    'fullScreen',
+                    'thumbs',
+                    'close'
+                ],
+                transitionEffect: 'fade'
+            });
+        });
+    </script>
+
+     
+
+    
+
+     </div> <!-- CIERRE CAJA MAYOR BODY -->
+
+
+     
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info-container">
+                <h2>Ready to experience the Landmark PVR difference? Get in touch with us today!</h2>
+                <div class="contact-methods">
+                    <a href="https://wa.me/+17279468985" class="social-icon whatsapp"></a>
+                    <a href="https://www.instagram.com/youragency" target="_blank" class="social-icon instagram"></a>
+                    <a href="https://www.facebook.com/youragency" target="_blank" class="social-icon facebook"></a>
+                    <a href="https://www.youtube.com/@casapv" target="_blank" class="social-icon youtube"></a>
+                </div>
+                
+            </div>
+            
+                <div class="footer-info">
+                   
+                    <p><strong>Phone:</strong> +17279468985  </p>
+                    <p><strong>Atention Hours:</strong> Monday to Friday, 10 AM - 6 PM</p>
+                </div>
+            </div>
+            <div class="footer-form-container">
+               
+                <form method="post" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="phone" placeholder="Your Phone" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <p class="footer-rights">&copy; 2025 Landmark PVR. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="{% url 'index' %}" class="footer-link">Privacy Policy</a> |
+                <a href="{% url 'index' %}" class="footer-link">Terms and Conditions</a>
+                <a href="/about_us/" class="footer-link">About Us</a>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>

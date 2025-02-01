@@ -1,0 +1,450 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideIn {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1f1f1f;
+    color: #333; /* Dark gray text for readability */
+    overflow-x: hidden;
+    scroll-behavior:smooth;
+}
+
+/* Fancy Header Styling */
+
+.logo{
+    max-width:380px;
+    width:100%;
+    display:flex;
+    margin:auto;
+    margin-top:-80px;/* ESTO LO PUESE PORQUE POR EL WIDTH QUE LE PUSE AL LOGO Y LE DEJE EL HECHGT AUTO , POR DEFECTO ESTA OCUPANDO MUCHO HEIGHT */
+    margin-bottom: -100px;
+}
+
+.logo img{
+    width:100%;
+}
+
+
+.alert{
+    font-size:25px;
+    color:white;
+    width:500px;
+    background-color:green;
+    display:flex;
+    margin:auto;
+    border-radius:5px;
+   justify-content: center;
+}
+@media screen and (max-width:500px){
+    .alert{
+        width:90%;
+    }
+}
+
+strong{
+    text-transform: capitalize;
+}
+
+h1{
+    display:flex;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color:#ffffff;
+    opacity: .9;
+    font-weight: 200;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 10px;
+}
+
+#h2_azul{
+    text-transform: uppercase;
+    color:#BF8D30;
+}
+
+
+.caja_mayor_body{
+    width:100%;
+    height:auto;
+    margin-top:50px;
+    margin-bottom: 50px;
+    position:relative;
+}
+@media screen and (max-width:500px){
+    .caja_mayor_body{
+
+        margin-left:-19px;
+    }
+    header{
+        width:105%;
+        margin-left:-16px;
+    }
+
+}
+/* Container Styling */
+.container {/*ESTE SI ES EL QUE SOSTIENE TODO LO DE LAS PROPIEDADES*/
+    max-width: 1200px;
+    width: 95%;
+
+    margin: auto;
+    padding: 2rem;
+    background: linear-gradient(to right, #1f1f1f, #3e3e3e);
+
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInContainer 1s ease-out;
+}
+
+@keyframes fadeInContainer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Card Styling */
+.card {
+    /*ESTE ES TODO EL CONTAINER DE LA PROPIEDAD EL PEQUENITO PERO DONDE ESTA TODA LA INFO Y LAS FOTOS Y*/
+
+     background: linear-gradient(to right, #1f1f1f, #1f1f1f);
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInCard 1s ease-out;
+   
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.07);
+}
+
+.card-content {
+    padding: 20px;
+
+}
+
+
+
+
+
+@keyframes shakeY {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    180% {
+      -webkit-transform: translate3d(0, 10px, 0);
+      transform: translate3d(0, 10px, 0);
+    }
+  }
+
+.view_details {
+    display:flex;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    max-width:600px;
+    width:99%;
+    height:40px;
+    background-color: #00bcd4;
+    background-color: #BF8D30;
+    background-image:linear-gradient( #BF8D30,black);
+    border-radius:   0 0 15px 15px ;
+    color: #ffffff; /* Soft coral for links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    animation:shakeY 3s 1s infinite;
+    animation-timeline:view();
+    animation-range: contain 90% cover 100%;
+
+}
+
+.card-content a:hover {
+    color: white;
+    background-color: #daa520;
+
+}
+
+@media (min-width: 768px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card img {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .card-content {
+        flex: 1;
+        padding: 20px;
+    }
+}
+
+
+.card-content p {/*TEXTO DEL PRIMER CONTAINER DE INFO */
+    margin:15 0 ;    
+    color: #ffffff; /* Light gray text for paragraphs */
+    opacity: .8;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+caption {/*ESTE ES EL TITULO DE LA SEGUNDA SECION DE INFO primary view*/
+    
+    font-size: 1.5em;
+    color: #BF8D30 ; /* Vibrant blue for table captions */
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Table Styling */
+table {/*ESTE ES TODO EL SEGUNDO CONTAINER DE LA INFO */
+    border-collapse: collapse;
+    width: 100%;
+    color: #ffffff;
+    opacity: .8;
+    background: linear-gradient(to right, #1f1f1f, #1f1f1f);
+    background-color: red;
+    margin: 20px 0;
+    border-radius: 8px;
+    
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+th, td {/*ESTE ES EL TEXTO DE LA PRIMERA SESION*/
+    padding: 8px 0;
+    text-align: left;
+    
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+}
+
+thead {
+
+}
+
+tbody tr:nth-child(even) {
+
+}
+
+tbody tr:nth-child(odd) {
+
+}
+
+tbody tr:hover {
+
+}
+
+
+
+/* SWIPER */
+.swiper {
+    width: 50%;
+     /* Ensure there's a height for the Swiper container */
+}
+
+@media screen and (max-width: 763px) {
+    .swiper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 532px) {
+    .swiper {
+        width: 104%;
+    }
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    border-radius: 18px;
+    width: 500px;
+    max-width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.1);
+}
+@media screen and (max-width:768px){
+    .swiper-slide:hover img {
+        transform: none;
+    }
+}
+
+.swiper-pagination {
+    bottom: 10px !important;
+    z-index: 10;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(0, 0, 0, 0.2);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    opacity: 1;
+    transition: background 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: #1E88E5; /* Vibrant blue for active pagination */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #1E88E5;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px;
+}
+
+@media screen and (max-width:768px){
+    h1{
+
+
+        font-size: .6rem;
+        letter-spacing: 1px;
+
+    }
+    .container,.caja_mayor_body{
+        margin:0;
+        padding:0;
+        width:100%;
+    }
+
+    .card img{
+        border-radius: 5px;
+        width:100%;
+        height:100%;
+    }
+    .card:hover{
+        transform: translate(0);
+    }
+}
+
+
+.footer button {
+    font-size: 20px;
+    padding: 12px 170px;
+    background-color: #BF8D30 !important;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.footer button:hover {
+    background-color: #0056b3;
+    transform: translateY(-4px);
+}
+
+
+
+
+
+
+
+
+
+
+

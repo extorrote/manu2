@@ -1,0 +1,538 @@
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+            /*####################################################################################*/
+            html{
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Roboto', sans-serif;
+                background: #1f1f1f; /* Very light gray background */
+                color: rgba(255, 255, 255, 0.612);
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+
+
+            }
+
+            .logo{
+                max-width:380px;
+                width:100%;
+                display:flex;
+                margin:auto;
+                margin-top:-200px;/* ESTO LO PUESE PORQUE POR EL WIDTH QUE LE PUSE AL LOGO Y LE DEJE EL HECHGT AUTO , POR DEFECTO ESTA OCUPANDO MUCHO HEIGHT */
+                margin-bottom: -100px;
+            }
+            
+            .logo img{
+                width:100%;
+            }
+
+            /* Container Styling */
+            .container {
+                max-width: 1400px;
+                width: 100%;              
+                margin: auto;
+                padding: 2rem;
+                background:line #1f1f1f; /* White background for content */
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                animation: fadeInContainer 1s ease-out;
+            }
+
+
+            @keyframes fadeInContainer {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+          
+
+
+            /* Card Styling */
+            .card {
+               
+                margin: 20px 0;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                animation: fadeInCard 1s ease-out;
+            }
+          
+
+            @keyframes fadeInCard {
+                from {
+                    opacity: 0;
+                    transform: scale(0.98);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            h1{/*AQUI ES DONDE TENGO EL NOMBRE DEL CONDO */
+                display:none;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: rgba(255, 255, 255, 0.612);
+                text-align: center;
+                text-transform:capitalize;
+                font-size:1.2rem;
+            }
+            @media screen and (max-width:768px){
+                h1{
+                    font-size: 1rem;
+                }
+            }
+            p{
+                text-transform:capitalize;
+                
+            }
+            .info_principio{
+                max-width:1400px;
+                width:100%;
+              
+                border-radius: 10px;
+                margin-top: 120px;
+                margin-bottom: 0;
+            }
+            .p_beginning{
+                max-width:1400px;
+                width:100%;
+                height:40px;
+                display:flex;
+                justify-content:space-evenly;
+                
+                
+            }
+
+            @media screen and (max-width:560px){
+                .p_beginning{
+                    max-height:100px;
+                    height:100%;
+                    flex-wrap:wrap ;
+                   
+
+                }
+            }
+
+            h4{
+
+                max-width:300px;
+                width:100%;
+                height:40px;
+                display:flex;
+                margin: auto;
+                margin-top: 50px;
+                margin-bottom:10px;
+                justify-content: center;
+                align-items: center;
+                font-family: "pegada_gruesita_entendible";
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 2rem;
+                
+            }
+
+            .extra_description{
+                text-align: center;
+                text-transform: capitalize;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            
+            
+            a{
+                font-size:inherit;
+            }
+            div{
+                text-transform:capitalize;
+            }
+            strong{
+                text-transform:uppercase;
+            }
+            .card img {
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform 0.3s ease;
+            }
+
+            .card:hover img {
+                transform: scale(1.07);
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+            
+
+
+
+
+
+            
+            @media (min-width: 768px) {
+                .card {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .card img {
+                    flex: 1;
+                    max-width: 50%;
+                }
+
+                .card-content {
+                    flex: 1;
+                    padding: 20px;
+                }
+            }
+
+            /* Table Styling */
+            table {              
+                border-collapse: collapse;
+                width: 100%;
+                color: rgba(255, 255, 255, 0.612);
+                background-color: #bf8d304b;/*ESTE ES EL FONDO DE CUANDO LOS DATOS DEL CONDO SE UNEN */
+                
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            caption {
+                padding: 12px;
+                font-size: 1.5em;
+                color: rgba(255, 255, 255, 0.612);
+               
+                text-align: center;
+                font-weight: 600;
+            }
+
+            th, td {
+                padding: 12px;
+                text-align: left;
+               /* border: 1px solid #E0E0E0; /* Light gray border */
+            }
+
+            thead {
+               
+            }
+
+            tbody tr:nth-child(even) {
+               
+            }
+
+            tbody tr:nth-child(odd) {
+                
+            }
+            tbody tr:nth-child(3) {
+                
+            }
+
+            tbody tr:hover {
+                background-image: linear-gradient(#1f1f1f,#bf8d304b);
+            }
+
+
+
+            /* SWIPER */
+
+            .swiper-container{/*ESTE ES EL CONTAINER DONDE TENGO LAS FOTOS*/
+                height:500px;
+            }
+            @media screen and (max-width: 763px) {
+                .swiper {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width: 532px) {
+                .swiper {
+                    width: 104%;
+                }
+            }
+
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .swiper-slide img {
+                border-radius: 18px;
+                width: 1400px;
+                max-width: 100%;
+                height: 450px;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+
+        
+            
+        
+            .swiper-slide:hover img {
+                transform: scale(1.1);
+            }
+
+            .swiper-pagination {
+                bottom: 10px !important;
+                z-index: 10;
+            }
+
+            .swiper-pagination-bullet {
+                background: rgba(0, 0, 0, 0.2);
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                opacity: 1;
+                transition: background 0.3s ease;
+            }
+
+            .swiper-pagination-bullet-active {
+                background: #1E88E5; /* Vibrant blue for active pagination */
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: #1E88E5;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
+                width: 38px;
+                height: 38px;
+                transition: background-color 0.3s ease;
+            }
+
+            .swiper-button-next:hover,
+            .swiper-button-prev:hover {
+                background-color: rgba(255, 255, 255, 1);
+            }
+
+            .swiper-button-next::after,
+            .swiper-button-prev::after {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 500px) {
+                .swiper-slide {
+                    padding-right: 8px;
+                    margin-left: -10px;
+                }
+                .swiper-slide img {
+                    width: calc(100% - 10px);
+                    margin-right: 10px;
+                }
+                .swiper-button-next {
+                    margin-right: 8px;
+                }
+            }
+
+            .youtube_video iframe{
+                max-width:1400px;
+                width:100%;
+                border-radius: 20px  20px 0 0;
+            }
+            .video_condo {/*ESTE ES EL CONTENEDOR MAS NO EL VIDEO*/
+                max-width: 1400px;
+                max-width: 100%;
+                margin-top:-10px;
+               
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);               
+                animation: fadeIn 2s ease-out;
+              
+            }
+
+            .map-container {
+                margin-top: 0;
+                border-radius: 4px;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                animation: bounce 1s ease-out;
+                border-radius:  0 0 20px  20px;
+                margin-top:-5px;
+            }
+
+            .map-container iframe {
+               
+                width: 100%;
+                height: 300px;
+                border: none;
+                
+            }
+
+           
+
+
+           
+
+
+            @media screen and (max-width:900px){
+                .container{
+                   
+                    width:98%;
+                    padding:0;
+                  
+
+                }
+            }
+            /*AQUI ES DONDE METI LA INFO DEL CONDO CON LOS ICONOS */
+            .property-info {               
+                display: flex;
+                background-color: #bf8d304b;
+                flex-wrap: wrap;
+              text-align: center;
+                gap: 16px; /* Space between cards */
+                
+            }
+           
+            @media screen and (max-width:768px){
+                .property-info{
+                 gap:4px;
+                }
+            }
+
+            .property-card {
+                background-color: #1f1f1f;
+                color: rgba(255, 255, 255, 0.612);               
+                border-radius: 8px;
+                padding: 12px;
+                flex: 1 1 calc(33% - 16px); /* Adjust width as needed */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+            .property-card:hover{
+                background-color: #bf8d30;
+                color:#ffffff;
+            }
+
+            .property-card strong {
+                display: block;
+                margin-bottom: 4px;
+            }
+           
+            /*#####################################################################*/
+            .arriba{
+                border-radius: 20px  20px  0 0 !important;
+               
+            }
+            .reserve-button {
+                max-width:1400px;
+                width:100%;
+                height:55px;
+                display:flex;
+                margin:auto;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: #fff;
+                border-radius:  0 0 20px  20px;
+                text-decoration: none;
+                
+                margin: 1rem auto 0;
+                background-color: #bf8d30;
+              
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                animation: bounce 9s infinite;
+            }
+           
+            @media screen and (max-width:768px){
+                .reserve-button{
+                    width:98%;
+                }
+            }
+            .reserve-button:hover{
+                background: orange;
+            }
+            @keyframes bounce {
+                    0%, 20%, 50%, 80%, 100% {
+                    transform: translateY(0);
+                    }
+                    40% {
+                    transform: translateY(-20px);
+                    }
+                    60% {
+                    transform: translateY(-15px);
+                    }
+                }
+
+                .bounce {
+                    animation: bounce 2s infinite;
+                }
+
+            @media screen and(max-width:650px){
+                .reserve-button{
+                    display:flex;
+                    margin-right:40px;
+                    
+
+                }
+            }
+
+
+            .footer button {               
+                background: #bf8d30 !important;                 
+                border-radius:  0 0 8px  8px!important;               
+                
+            }
+            
+            .footer button:hover {
+                background-color: orange !important;
+                transform: translateY(-4px);
+            }
+
+
+          .extra_description_strong{
+             display:flex !important;
+             justify-content:center;
+             align-items:center;
+             color:#BF8D30 !important;
+            }
+            
+
+
+            

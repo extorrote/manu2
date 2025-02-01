@@ -1,0 +1,164 @@
+*{
+    margin:0;/*SIN ESTAS 2 COSAS EL MENU ME ESTABA TENIENDO UN MARGIN LEFT QUE NO LE HABIA PUESTO*/
+    padding:0;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 60% of viewport height for desktop */
+    animation:slideIn 1.5s .4s ease;
+
+}
+@media screen and (max-width:768px){
+    .slider-container{
+        box-shadow: 0 0  50px white;
+    }
+}
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slider-container img.active {
+    opacity: 1;
+}
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+
+nav #checkbox, .icono{
+
+    display:none;
+ }
+
+ nav{  
+    max-width:900px;
+    width:100%;
+    height:8vh;
+    background-color:rgba(31, 31, 31, 0.46);  
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+ }
+
+
+
+ ul , .submenu{/*ESTOY LLAMANDO EL SUBMENU PARA QUE AGARRE LOS MISMOS ESTILOS DEL RESTO*/
+    display:flex;
+    gap:10px;
+ }
+ 
+
+
+
+
+li ,.submenu{/*EN TODO ESTOY LLAMANDO EL SUBMENU TAMBIEN PARA QUE AGARRE EL ESTILO DEL RESTO */
+    display:flex;
+    justify-content: center; /*CON ESTO LOS PUSE EN EL MEDIO EN X*/
+    align-items:center; /*CON ESTO LOS PUSE EN EL MEDIO EN Y*/
+    width:auto;
+    height:40px;
+    border-radius: 5px;
+    margin:auto ; /*CON ESTO HICE QUE TENGAN UN ESPACIO ENTRE ELLOS PERO QUE A LO ALTO SEA AUTOMATICO EL ESPACIO*/    
+}
+li:hover ,.submenu:hover{/*EN TODO ESTOY LLAMANDO EL SUBMENU TAMBIEN PARA QUE AGARRE EL ESTILO DEL RESTO */
+    background-color: #bf8d30;
+}
+
+.menu a, .submenu{  
+    color:#fff; /*AQUI ESTOY MENSIONANDO EL SUBMENU SOLAMENTE PARA DARLE COLOR AL TEXTO */
+    cursor:pointer;
+    text-decoration:none;
+    list-style: none;
+    font-size: 15px;
+    border-bottom:none !important;
+    text-wrap: nowrap;
+    letter-spacing: 5px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/*####################### DESDE AQUI VOY A EMPEZAR A TRABAJAR EL SUBMENU ##########*/
+
+.submenu ul {
+    display: none; /* Hide submenu by default */
+    position: absolute; /* Ensures it doesn’t take up space when hidden */
+    background-color: rgba(31, 31, 31, 0.9); /* Background color for better visibility */
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.submenu {
+    position: relative; /* Allows absolute positioning of the submenu */
+    cursor: pointer; /* Indicates it's interactive */
+    padding: 10px;
+}
+
+.submenu:hover ul {
+    display: flex; /* Show submenu when hovering */
+    flex-direction: column;
+}
+
+@media screen and (max-width:840px){
+      /* AQUI ESTOY APARECIENDO EL ICONO */
+      .icono{
+        display:flex;
+    }
+    .menu{
+        display:none /*AQUI ESTOY DESAPARECIENDO EL MENU*/
+    }
+
+    /* AQUI LE ESTOY QUITANDO EL BACKGROUND AL  NAV*/
+    
+        nav {
+            background-color:transparent;
+        }
+    
+
+  
+
+    /*AQUI VOY A ABRIR EL MENU CON EL CHECKBOX*/
+
+    #checkbox:checked  ~ .menu {
+         display:flex;       
+         background-color:rgba(31, 31, 31, 0.46);  
+         
+    }
+
+    #checkbox:checked  ~ .menu ul{ /*AQUI ESTOY APARECIENDO LOS UL */
+       display:flex;
+       flex-direction: column;
+       
+    }
+
+    .submenu{
+        margin-top:20px
+    }
+
+
+
+}
+
+
+

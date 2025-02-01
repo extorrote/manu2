@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title Tag (Essential for SEO) -->
+    <title> Reservation | Section Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR</title>
+
+    <!-- Meta Description (Important for SEO & Click-Through Rate) -->
+    <meta name="description" content="Discover Landmark PVR, your premier choice for luxury vacation rentals and professional property management in Puerto Vallarta, Mexico. Exclusive beachfront villas & high-end condos.">
+
+    <!-- Meta Keywords (Not as important for Google but useful for other search engines) -->
+    <meta name="keywords" content="luxury rentals Puerto Vallarta, vacation rentals Puerto Vallarta, property management Puerto Vallarta, beachfront villas, luxury condos, Landmark PVR">
+
+    <!-- Author Information -->
+    <meta name="author" content="www.webdevelopermx.com">
+
+    <!-- Robots Meta Tag (Ensures Search Engines Can Crawl & Index the Site) -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags (Optimizes the Website for Facebook and Social Media Sharing) -->
+    <meta property="og:title" content="Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+    <meta property="og:description" content="Explore our exclusive collection of luxury vacation rentals and professional property management services in Puerto Vallarta, Mexico.">
+    <meta property="og:image" content="{%static '/images/og_image.png'%}">
+    <meta property="og:url" content="https://www.landmarkvallarta.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Tags (Optimizes the Website for Twitter Sharing) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxury Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+    <meta name="twitter:description" content="Book a luxury vacation rental in Puerto Vallarta with Landmark PVR. Explore beachfront villas and exclusive properties.">
+    <meta name="twitter:image" content="{%static '/images/og_image.png'%}">
+
+    <!-- Local SEO Meta Tags (Helps Search Engines Understand Your Location) -->
+    <meta name="geo.region" content="MX-JAL">
+    <meta name="geo.placename" content="Puerto Vallarta, Jalisco, Mexico">
+    <meta name="geo.position" content="20.6534;-105.2253">
+    <meta name="ICBM" content="20.6534, -105.2253">
+
+    <!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+    <link rel="canonical" href="https://www.landmarkvallarta.com">
+
+    <!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+    <link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+    <link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+
+    <!-- Structured Data (Schema Markup for Better Search Visibility) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Landmark PVR",
+      "url": "https://www.landmarkvallarta.com",
+      "image": "https://www.landmarkvallarta.com/images/logo.png",
+      "description": "Luxury vacation rentals and high-end property management services in Puerto Vallarta, Mexico.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "puerto vallarta",
+        "addressLocality": "Puerto Vallarta",
+        "addressRegion": "Jalisco",
+        "postalCode": "48300",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.6534",
+        "longitude": "-105.2253"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+17279468985",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+<!-- FIN DE META TAGS -->
+
+    <!-- External Stylesheets -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/condo_calendar_and_reserve.css' %}">
+    
+    <!-- External Scripts -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <h1>Calendar for {{ condo.development_name }}</h1>
+    
+    <!-- Contact Buttons -->
+    <div class="contact-buttons">
+        <a class="contact-button reserve" href="{% url 'index' %}" data-aos="fade-up">Back Home</a>
+    </div>
+    
+    <div id='calendar' class="visible"></div>
+
+    <h2 class="form-heading">Only Dates on Green are Available.</h2>
+    <form method="post" action="{% url 'reserve_condo' condo.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a  target="_blank" class="terms_and_conditions" href="{% url 'terms_and_conditions' %}" data-aos="fade-up">Read Terms and Conditions</a></br></br>
+        <button type="submit">Reserve</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            // Data from Django view
+            var unavailableDates = JSON.parse('{{ unavailable_dates|escapejs }}');
+            var availableDates = JSON.parse('{{ available_dates|escapejs }}');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                validRange: {
+                    start: new Date().toISOString().split('T')[0],
+                    end: new Date(new Date().setFullYear(new Date().getFullYear() + 5)).toISOString().split('T')[0]
+                },
+                dateCellDidMount: function(info) {
+                    var date = info.dateStr;
+                    var status = unavailableDates.includes(date) ? 'unavailable' : 'available';
+                    info.el.setAttribute('data-status', status);
+                },
+                events: function(fetchInfo, successCallback, failureCallback) {
+                    var events = unavailableDates.map(function(date) {
+                        return {
+                            start: date,
+                            end: date,
+                            display: 'background',
+                            color: '#f44336'
+                        };
+                    }).concat(availableDates.map(function(date) {
+                        return {
+                            start: date,
+                            end: date,
+                            display: 'background',
+                            color: '#4caf50',
+                        };
+                    }));
+                    successCallback(events);
+                },
+                viewDidMount: function() {
+                    // Add class for calendar animation
+                    calendarEl.classList.add('visible');
+                }
+            });
+
+            calendar.render();
+
+            // Initialize Flatpickr for date inputs
+            flatpickr("input[type='date']", {
+                dateFormat: "Y-m-d",
+                enable: availableDates,
+                // Customize Flatpickr appearance
+                onDayCreate: function(dObj, dStr, fp, dayElem) {
+                    var date = dayElem.dateObj.toISOString().split('T')[0];
+                    if (availableDates.includes(date)) {
+                        dayElem.classList.add('available');
+                    } else {
+                        dayElem.classList.add('unavailable');
+                    }
+                }
+            });
+
+            // Scroll Animation
+            window.addEventListener('scroll', function() {
+                const scrollPos = window.scrollY;
+                // Adjust if necessary
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles_chef.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles_menu.css' %}">
+     <!-- Title Tag (SEO & Readability) -->
+     <title>Private Chef Services in Puerto Vallarta | Landmark PVR</title>
+
+     <!-- Meta Description (SEO & Click-Through Optimization) -->
+     <meta name="description" content="Indulge in a world-class dining experience with our private chef services in Puerto Vallarta. Custom menus, fresh ingredients, and exceptional service at your vacation rental.">
+
+     <!-- Meta Keywords (For Alternative Search Engines) -->
+     <meta name="keywords" content="private chef Puerto Vallarta, luxury dining, personal chef service, gourmet meals, custom menus, chef for hire, exclusive dining">
+
+     <!-- Author Information -->
+     <meta name="author" content="www.webdevelopermx.com">
+
+     <!-- Robots Meta Tag (For Search Engine Crawling) -->
+     <meta name="robots" content="index, follow">
+
+     <!-- Open Graph Tags (For Social Media Sharing) -->
+     <meta property="og:title" content="Private Chef Services in Puerto Vallarta | Landmark PVR">
+     <meta property="og:description" content="Enjoy a luxurious private chef experience at your vacation rental in Puerto Vallarta. Tailored menus, fresh ingredients, and professional service.">
+     <meta property="og:image" content="{% static 'images/breakfast_intro.png' %}">
+     <meta property="og:url" content="https://www.landmarkpvr.com/private_chef">
+     <meta property="og:type" content="website">
+
+     <!-- Twitter Card (For Better Twitter Sharing) -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Private Chef Services in Puerto Vallarta | Landmark PVR">
+     <meta name="twitter:description" content="Book a private chef for an exclusive dining experience in Puerto Vallarta. Luxury meals, fresh ingredients, and professional service at your vacation home.">
+     <meta name="twitter:image" content="{% static 'images/breakfast_intro.png' %}">
+     <meta name="twitter:url" content="https://www.landmarkpvr.com/private_chef">
+
+      <!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+      <link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+      <link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+
+       <!-- Structured Data (Schema Markup for Better Search Visibility) -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LodgingBusiness",
+          "name": "Landmark PVR",
+          "url": "https://www.landmarkvallarta.com",
+          "image": content="{% static 'images/breakfast_intro.png' %}",
+          "description": "Luxury vacation rentals and high-end property management services in Puerto Vallarta, Mexico.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "puerto vallarta",
+            "addressLocality": "Puerto Vallarta",
+            "addressRegion": "Jalisco",
+            "postalCode": "48300",
+            "addressCountry": "MX"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "20.6534",
+            "longitude": "-105.2253"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+17279468985",
+            "contactType": "customer service"
+          }
+        }
+        </script>
+
+
+ <!-- ############## FIN META TAGS ###################-->
+
+</head>
+<body>
+<div class="slider-container">
+    <div class="menu-overlay">
+        <nav>
+        <input type="checkbox" id="checkbox">
+    <label for="checkbox" class="icono"> <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="white"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg></label>
+
+        <div class="menu">
+            <ul>
+
+
+                <li class="poner_margin_open_menu_mobile no-wrap1"><a href="{%url  'property_management' %}">PROPERTY MANAGEMENT</a></li>
+                <!-- <li class="poner_margin_open_menu_mobile  no-wrap2" ><a href="{% url 'private_chef'%}">PRIVATE CHEF</a></li> -->
+                <!-- <li class="poner_margin_open_menu_mobile"><a href="{%url 'list_condos'%}">RENTALS</a></li> -->
+                <li class="poner_margin_open_menu_mobile no-wrap2" ><a href="{%url 'about_us'%}">ABOUT US</a></li>
+                <li class="poner_margin_open_menu_mobile"><a href="{%url 'contact'%}">CONTACT</a></li>
+                <li class="poner_margin_open_menu_mobile"><a href="{% url 'index'%}">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+
+     <img src="{% static 'images/image_desk1.jpg' %}" class="active" alt="Image 1 ">
+        <img src="{% static 'images/image_desk2.jpg' %}" alt="Image 2 ">
+        <img src="{% static 'images/image_desk3.jpg' %}" alt="Image 3 ">
+        <img src="{% static 'images/image_desk4.jpg' %}" alt="Image 4 ">
+        <img src="{% static 'images/image_desk5.jpg' %}" alt="Image 5 ">
+        <img src="{% static 'images/image_desk6.jpg' %}" alt="Image 6 ">
+        <img src="{% static 'images/image_desk7.jpg' %}" alt="Image 7 ">
+        <img src="{% static 'images/image_desk8.jpg' %}" alt="Image 8 ">
+        <img src="{% static 'images/image_desk9.jpg' %}" alt="Image 9 ">
+        <img src="{% static 'images/image_desk10.jpg' %}" alt="Image 10 ">
+</div>
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.slider-container img');
+    const totalImages = images.length;
+
+    const nextImage = () => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % totalImages;
+        images[currentIndex].classList.add('active');
+    }
+
+    setInterval(nextImage, 4000); // Change image every 3 seconds
+</script>
+<!-- ############################################################# FIN HEADER ##########################################################-->
+
+</head>
+<body>
+
+        <!-- MENU DESAYUNOS -->
+               {%comment%}
+        </div>
+                <img src="{% static 'chef_images/image1.jpg' %}" alt="Image 1" class="active">
+                <img src="{% static 'chef_images/image2.jpg' %}" alt="Image 2">
+                <img src="{% static 'chef_images/image3.jpg' %}" alt="Image 3">
+                <img src="{% static 'chef_images/image4.jpg' %}" alt="Image 4">
+                <img src="{% static 'chef_images/image5.jpg' %}" alt="Image 5">
+                <img src="{% static 'chef_images/image6.jpg' %}" alt="Image 6">
+                <img src="{% static 'chef_images/image7.jpg' %}" alt="Image 7">
+                <img src="{% static 'chef_images/image8.jpg' %}" alt="Image 8">
+                <img src="{% static 'chef_images/image9.jpg' %}" alt="Image 9">
+                <img src="{% static 'chef_images/image10.jpg' %}" alt="Image 10">
+
+                <img src="{% static 'chef_images/image11.jpg' %}" alt="Image 11">
+                <img src="{% static 'chef_images/image12.jpg' %}" alt="Image 12">
+                <img src="{% static 'chef_images/image13.jpg' %}" alt="Image 13">
+                <img src="{% static 'chef_images/image14.jpg' %}" alt="Image 14">
+                <img src="{% static 'chef_images/image15.jpg' %}" alt="Image 15">
+                <img src="{% static 'chef_images/image16.jpg' %}" alt="Image 16">
+                <img src="{% static 'chef_images/image17.jpg' %}" alt="Image 17">
+                <img src="{% static 'chef_images/image18.jpg' %}" alt="Image 18">
+                <img src="{% static 'chef_images/image19.jpg' %}" alt="Image 19">
+                <img src="{% static 'chef_images/image20.jpg' %}" alt="Image 20">
+            </div><!-- CIERRE FOTOS-->
+
+        {%endcomment%}
+        <div class="container">
+            <div class="menu-section">
+                <div class="section">
+                    <img src="{% static 'images/breakfast_intro2.png'%}">
+                 </div><!-- CIERRE CONTAINER SECTION (IMAGEN)-->
+                <div class="menu-options">
+                    <h2>Option 1</h2>
+                    <div class="ul">
+                        <div class="li">Every morning we will have a continental breakfast bar</div>
+                        <div class="li">Coffee of the day</div>
+                        <div class="li">Fresh orange or green juice</div>
+                        <div class="li">Plate with seasonal fruit</div>
+                        <div class="li">Yogurt and granola</div>
+                        <div class="li">Sweet bread</div>
+                      </div>
+
+                    <h2>Option 2</h2>
+                    <div class="ul">
+                        <div class="li">Red chilaquiles</div>
+                        <div class="li">Scrambled or fried eggs</div>
+                        <div class="li">Stewed beans</div>
+                        <div class="li">Avocado and panela cheese salad</div>
+                        <div class="li">Hot cakes with red fruits</div>
+                      </div><!-- CIERRE UL-->
+                      <h2>Option 3</h2>
+                      <div class="ul">
+                        <div class="li">Ham and cheese omelette</div>
+                        <div class="li">Rosemary potatoes with butter</div>
+                        <div class="li">Bacon</div>
+                        <div class="li">Mixed vegetables</div>
+                        <div class="li">French toast with red fruits</div>
+                      </div><!-- CIERRE UL-->
+                      <h2>Option 4</h2>
+                      <div class="ul">
+                        <div class="li">Florentine eggs</div>
+                        <div class="li">Hash brawn</div>
+                        <div class="li">Sausage</div>
+                        <div class="li">Beans</div>
+                        <div class="li">Toast</div>
+                        <div class="li">Waffles</div>
+                      </div><!-- CIERRE UL-->
+
+                    <p>WE CAN ALSO MAKE CHANGES TO THE CLIENT'S TASTE, WE ARE A TRAINED STAFF TO SATISFY AND PROVIDE THE BEST SERVICE.</p>
+                </div>   <!-- CIERRE MENU OPTIONS-->
+                </div><!-- CIERRE MENU SECTION CONTAINER-->
+            </div><!-- CIERRE CONTAINER PRINCIPAL-->
+
+
+        <!-- MENU COMIDAS -->
+        <div class="container">
+            <div class="menu-section">
+                <div class="section">
+                    <img src="{%static '/images/lunch_intro.png'%}">
+                    </div>
+                <div class="menu-options">
+                    <h2>Option 1: </h2>
+                    <div class="ul">
+                        <div class="li">Family style - seafood</div>
+                        <div class="li">Mahi Mahi filet with garlic</div>
+                        <div class="li">Shrimp scampi</div>
+                        <div class="li">Marinated octopus on potato flakes</div>
+                        <div class="li">Basmati rice with lemon</div>
+                        <div class="li">Fresh tomato, avocado & cucumber salad</div>
+                        <div class="li">Bread with butter & garlic</div>
+                        <div class="li">Red berry ice cream</div>
+                      </div>
+                      <h2>Option 2:</h2>
+                      <div class="ul">
+                        <div class="li">Family style - Mexican</div>
+                        <div class="li">Blue corn sope with pork rinds and pickled onion and carrot</div>
+                        <div class="li">Crab enchiladas bathed in a pink chipotle cream</div>
+                        <div class="li">Governor-style shrimp taco</div>
+                        <div class="li">White rice with garlic and butter</div>
+                        <div class="li">Guacamole with tortilla chips</div>
+                        <div class="li">Platter with chopped fruit and Tajín</div>
+                        <div class="li">Flan with toasted coconut and red berries</div>
+                      </div>
+                      <h2>Option 3:</h2>
+                      <div class="ul">
+                        <div class="li">Beef filet accompanied with a sweet red wine, guajillo and hibiscus sauce with rosemary</div>
+                        <div class="li">Mahi Mahi fillet with lemon cream and dill</div>
+                        <div class="li">Mashed potatoes with roasted garlic</div>
+                        <div class="li">Roasted vegetables</div>
+                        <div class="li">Baked beet salad, apple, orange supreme, caramelized walnut and goat cheese</div>
+                        <div class="li">Focaccia</div>
+                        <div class="li">Chocolate cake with red fruits</div>
+                      </div>
+                      <h2>Option 4:</h2>
+                      <div class="ul">
+                        <div class="li">Baked salmon with basil and rosemary pesto</div>
+                        <div class="li">Chicken breast stuffed with cheese and vegetables accompanied by a pink cream</div>
+                        <div class="li">Fresh salad with mixed lettuce, strawberry, apple, walnut and feta cheese</div>
+                        <div class="li">Spring potato with rosemary</div>
+                        <div class="li">Roasted vegetables</div>
+                        <div class="li">Focaccia</div>
+                        <div class="li">Crepe stuffed with apple and sweet milk</div>
+                      </div>
+
+                    </div><!-- CIERRE ul-->
+            </div>   <!-- CIERRE MENU OPTIONS-->
+        </div><!-- CIERRE MENU SECTION CONTAINER-->
+    </div><!-- CIERRE CONTAINER PRINCIPAL-->
+
+        <!-- MENU CENAS -->
+        <div class="container">
+            <div class="menu-section">
+                <div class="section">
+                    <img src="{% static '/images/dinner_intro.png'%}">
+                     </div>
+                <div class="menu-options">
+                    <h2>Option 1</h2>
+                    <div class="ul">
+                        <div class="li">Watermelon salad: <strong>With peppermint and feta cheese, marinated in a sweet and sour vinaigrette on a bed of mixed lettuce.</strong></div>
+                        <div class="li">Jaiba enchilada: <strong>Bathed in a pink sauce on a bed of basmati rice.</strong></div>
+                        <div class="li">Fresh fish fillet: <strong>On vegetables accompanied by a yellow lemon and dill sauce.</strong></div>
+                        <div class="li">Cheese pie with guava jam: <strong>Accompanied by red fruits and a land of cookies and toasted coconut.</strong></div>
+                      </div>
+
+                      <h2>Option 2</h2>
+                      <div class="ul">
+                        <div class="li">Tiradito: <strong>Of tuna with a fresh carrot, cucumber, and jicama salad.</strong></div>
+                        <div class="li">Shrimp croquette: <strong>On a mango and avocado salad with a chili mayonnaise.</strong></div>
+                        <div class="li">Fillet mignon: <strong>Accompanied by mashed potatoes, carrots, asparagus with a red wine sauce, guajillo, and jamaica.</strong></div>
+                        <div class="li">Red wine pear: <strong>With red fruit sorbet.</strong></div>
+                      </div>
+
+                      <h2>Option 3</h2>
+                      <div class="ul">
+                        <div class="li">Beet carpaccio: <strong>Beet carpaccio with a mixed arugula salad, caramelized walnuts, mango salsa, and goat cheese.</strong></div>
+                        <div class="li">Rib eye: <strong>Rib eye served with roasted garlic mashed potatoes, mixed vegetables, and a red wine reduction with Jamaican spices.</strong></div>
+                        <div class="li">Creamy cheesecake: <strong>Creamy cheesecake with a sweet passion fruit sauce, cookie crumble, coconut flakes, and mixed fruits.</strong></div>
+                      </div><!-- CIERRE ul-->
+
+                </div>   <!-- CIERRE MENU OPTIONS-->
+            </div><!-- CIERRE MENU SECTION CONTAINER-->
+        </div><!-- CIERRE CONTAINER PRINCIPAL-->
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info-container">
+                <h2>Ready to experience the Landmark PVR difference? Get in touch with us today!</h2>
+                <div class="contact-methods">
+                    <a href="https://wa.me/+17279468985" class="social-icon whatsapp"></a>
+                    <a href="https://www.instagram.com/youragency" target="_blank" class="social-icon instagram"></a>
+                    <a href="https://www.facebook.com/LANDMARKPVR?mibextid=wwXIfr`" target="_blank" class="social-icon facebook"></a>
+                    <a href="https://www.youtube.com/@casapv" target="_blank" class="social-icon youtube"></a>
+                </div>
+
+            </div>
+
+                <div class="footer-info">
+
+                    <p><strong>Phone:</strong> +17279468985  </p>
+                    <p><strong>Atention Hours:</strong> Monday to Friday, 10 AM - 6 PM</p>
+                </div>
+            </div>
+            <div class="footer-form-container">
+
+                <form method="post" action="{% url 'send_email' %}">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="phone" placeholder="Your Phone" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <p class="footer-rights">&copy; 2025 Landmark PVR. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="{% url 'index' %}" class="footer-link">Privacy Policy</a> |
+                <a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms and Conditions</a>
+                <a href="/about_us/" class="footer-link">About Us</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

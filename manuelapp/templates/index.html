@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--ESTO ES PARA QUE NO GUARDE CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+       <!-- Title Tag (Essential for SEO) -->
+       <title>Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR</title>
+
+       <!-- Meta Description (Important for SEO & Click-Through Rate) -->
+       <meta name="description" content="Discover Landmark PVR, your premier choice for luxury vacation rentals and professional property management in Puerto Vallarta, Mexico. Exclusive beachfront villas & high-end condos.">
+
+       <!-- Meta Keywords (Not as important for Google but useful for other search engines) -->
+       <meta name="keywords" content="luxury rentals Puerto Vallarta, vacation rentals Puerto Vallarta, property management Puerto Vallarta, beachfront villas, luxury condos, Landmark PVR">
+
+       <!-- Author Information -->
+       <meta name="author" content="www.webdevelopermx.com">
+
+       <!-- Robots Meta Tag (Ensures Search Engines Can Crawl & Index the Site) -->
+       <meta name="robots" content="index, follow">
+
+       <!-- Open Graph Tags (Optimizes the Website for Facebook and Social Media Sharing) -->
+       <meta property="og:title" content="Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+       <meta property="og:description" content="Explore our exclusive collection of luxury vacation rentals and professional property management services in Puerto Vallarta, Mexico.">
+       <meta property="og:image" content="{%static '/images/og_image.png'%}">
+       <meta property="og:url" content="https://www.landmarkvallarta.com">
+       <meta property="og:type" content="website">
+
+       <!-- Twitter Card Tags (Optimizes the Website for Twitter Sharing) -->
+       <meta name="twitter:card" content="summary_large_image">
+       <meta name="twitter:title" content="Luxury Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+       <meta name="twitter:description" content="Book a luxury vacation rental in Puerto Vallarta with Landmark PVR. Explore beachfront villas and exclusive properties.">
+       <meta name="twitter:image" content="{%static '/images/og_image.png'%}">
+
+       <!-- Local SEO Meta Tags (Helps Search Engines Understand Your Location) -->
+       <meta name="geo.region" content="MX-JAL">
+       <meta name="geo.placename" content="Puerto Vallarta, Jalisco, Mexico">
+       <meta name="geo.position" content="20.6534;-105.2253">
+       <meta name="ICBM" content="20.6534, -105.2253">
+
+       <!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+       <link rel="canonical" href="https://www.landmarkvallarta.com">
+
+       <!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+       <link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+       <link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+
+       <!-- Structured Data (Schema Markup for Better Search Visibility) -->
+       <script type="application/ld+json">
+       {
+         "@context": "https://schema.org",
+         "@type": "LodgingBusiness",
+         "name": "Landmark PVR",
+         "url": "https://www.landmarkvallarta.com",
+         "image": "https://www.landmarkvallarta.com/images/logo.png",
+         "description": "Luxury vacation rentals and high-end property management services in Puerto Vallarta, Mexico.",
+         "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "puerto vallarta",
+           "addressLocality": "Puerto Vallarta",
+           "addressRegion": "Jalisco",
+           "postalCode": "48300",
+           "addressCountry": "MX"
+         },
+         "geo": {
+           "@type": "GeoCoordinates",
+           "latitude": "20.6534",
+           "longitude": "-105.2253"
+         },
+         "contactPoint": {
+           "@type": "ContactPoint",
+           "telephone": "+17279468985",
+           "contactType": "customer service"
+         }
+       }
+       </script>
+<!-- FIN DE META TAGS -->
+
+
+
+
+
+    {%comment%} ESTOS SON PARTE DE LOS SWIPER {%endcomment%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><!--ESTE CREO QUE ES PARA LOS ICONOS QUE TENIA-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"><!-- ESTE ES EL QUE HACE QUE FUNCIONE LA ANIMACION DEL TD, LA QUE HACE QUE SE UNAN LOS CAJONCITOS POR PARTES-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" /><!-- ESTE ES PARA EL OPENMODAL-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /><!-- SWIPER-->
+    <link rel="stylesheet" href="{%static '/css/index.css'%}">
+    <link rel="stylesheet" href="{% static 'css/styles_menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fuentes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footers.css' %}">
+</head>
+<body>
+    <div class="slider-container">
+        <div class="menu-overlay">
+            <nav>
+            <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="icono"> <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#ffffff"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg></label>
+
+            <div class="menu">
+                <ul>
+
+                     {% if user.username == 'kiki' or user.username == 'emanuel' or user.username == 'matias' %}
+                     <li class="poner_margin_open_menu_mobile no-wrap1"><a href="{%url  'property_management' %}">POPERTY MANAGEMENT</a></li>
+                     <li class="poner_margin_open_menu_mobile no-wrap2"><a href="{% url 'private_chef'%}">PRIVATE CHEF</a></li>
+                     <li class="poner_margin_open_menu_mobile no-wrap2" ><a href="{%url 'about_us'%}">ABOUT US</a></li>
+                     <li class="poner_margin_open_menu_mobile"><a href="{%url 'contact'%}">CONTACT</a></li>
+                     <div class="submenu">ADMIN
+                        <ul>
+                            <li class="poner_margin_open_menu_mobile"><a href="{% url 'post_condo'%}">POST CONDO</a></li>
+                            <li class="poner_margin_open_menu_mobile"><a href="{% url 'logout'%}">LOGOUT/{{user.username}}</a></li>
+                    </ul>
+                </div>
+
+
+                      {%else%}
+                    <li class="poner_margin_open_menu_mobile no-wrap1"><a href="{%url  'property_management' %}">POPERTY MANAGEMENT</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap2"><a href="{% url 'private_chef'%}">PRIVATE CHEF</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap2" ><a href="{%url 'about_us'%}">ABOUT US</a></li>
+                    <li class="poner_margin_open_menu_mobile"><a href="{%url 'contact'%}">CONTACT</a></li>
+                     <li class="poner_margin_open_menu_mobile"><a href="{%url 'login'%}">LOGIN</a></li>
+                    {%endif%}
+
+
+                </ul>
+            </div>
+        </nav>
+
+
+
+        </div>
+
+
+
+ <img src="{% static 'images/image_desk1.jpg' %}" class="active" alt="Image 1 ">
+        <img src="{% static 'images/image_desk2.jpg' %}" alt="Image 2 ">
+        <img src="{% static 'images/image_desk3.jpg' %}" alt="Image 3 ">
+        <img src="{% static 'images/image_desk4.jpg' %}" alt="Image 4 ">
+        <img src="{% static 'images/image_desk5.jpg' %}" alt="Image 5 ">
+        <img src="{% static 'images/image_desk6.jpg' %}" alt="Image 6 ">
+        <img src="{% static 'images/image_desk7.jpg' %}" alt="Image 7 ">
+        <img src="{% static 'images/image_desk8.jpg' %}" alt="Image 8 ">
+        <img src="{% static 'images/image_desk9.jpg' %}" alt="Image 9 ">
+        <img src="{% static 'images/image_desk10.jpg' %}" alt="Image 10 ">
+
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-container img');
+        const totalImages = images.length;
+
+        const nextImage = () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextImage, 4000); // Change image every 3 seconds
+    </script>
+    <!-- ############################################################# FIN HEADER ##########################################################-->
+
+
+    <div class="caja_mayor_body">
+        <div class="logo"><image src="{%static 'images/logo_property_management.png'%}"></div>
+
+    <div class="container" >
+        <h1> Luxury Vacational Rentals Romantic Zone Puerto Vallarta</h1>
+        {% if condos %}
+            {% for condo in condos %}
+                <div class="card" >
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% if condo.imagen1 and condo.imagen1.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen1.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen1.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen2 and condo.imagen2.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen2.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen2.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen3 and condo.imagen3.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen3.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen3.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen4 and condo.imagen4.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen4.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen4.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen5 and condo.imagen5.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen5.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen5.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen6 and condo.imagen6.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen6.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}}" src="{{ condo.imagen6.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen7 and condo.imagen7.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen7.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen7.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% if condo.imagen8 and condo.imagen8.url %}
+                            <div class="swiper-slide">
+                                <a href="{{ condo.imagen8.url }}" class="fancybox" data-fancybox="gallery">
+                                    <img alt="{{condo.development_name}} {{ condo.neighborhood }}"  src="{{ condo.imagen8.url }}" />
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 id="h2_azul">{{ condo.development_name }}</h2>
+                        <p>Neighborhood: <strong>{{ condo.neighborhood }}</strong></p>
+                        <p>Bedrooms: <trong>{{ condo.bedrooms }}</strong>
+                            <p>Bedrooms: <trong>{{ condo.bathrooms }}</strong>
+
+                        <table>
+                            <h2 id="h2_azul">Primary View : {{ condo.primary_view }}</h2>
+                            <thead>
+                                <tr>
+                                    <th>Price Per Night</th>
+                                    <th >USD {{ condo.holiday_season }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-aos="fade-up">
+                                    <td>Air-Aconditioning</td>
+                                    <td> <strong> {{ condo.air_conditioning}}</strong></td>
+                                </tr>
+                                <tr data-aos="fade-up">
+                                    <td>Swimming Pool:</td>
+                                    <td> <strong>{{ condo.swimming_pool }}</strong></td>
+                                </tr>
+                                <tr data-aos="fade-up">
+                                    <td>Hot Water:</td>
+                                    <td><strong>{{ condo.hot_water }}</strong></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <a class="view_details"  href="{% url 'condo_detail' condo.id %}">VIEW MORE DETAILS</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="color: #B0B0B0;">No condos available at the moment.</p>
+        {% endif %}
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize AOS
+            AOS.init();
+
+            // Initialize Swiper
+            var swiper = new Swiper('.swiper', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+            });
+
+            // Initialize Fancybox
+            $(".fancybox").fancybox({
+                infobar: false,
+                buttons: [
+                    'slideShow',
+                    'fullScreen',
+                    'thumbs',
+                    'close'
+                ],
+                transitionEffect: 'fade'
+            });
+        });
+    </script>
+    </div> <!-- CIERRE CAJA MAYOR BODY -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info-container">
+                <h2>Ready to experience the Landmark PVR difference? Get in touch with us today!</h2>
+                <div class="contact-methods">
+                    <a href="https://wa.me/+17279468985" class="social-icon whatsapp"></a>
+                    <a href="https://www.instagram.com/youragency" target="_blank" class="social-icon instagram"></a>
+                    <a href="https://www.facebook.com/LANDMARKPVR?mibextid=wwXIfr" target="_blank" class="social-icon facebook"></a>
+                    <a href="https://www.youtube.com/@casapv" target="_blank" class="social-icon youtube"></a>
+                </div>
+
+            </div>
+
+                <div class="footer-info">
+
+                    <p><strong>Phone:</strong> +17279468985  </p>
+                    <p><strong>Atention Hours:</strong> Monday to Friday, 10 AM - 6 PM</p>
+                </div>
+            </div>
+            <div class="footer-form-container">
+
+                <form method="post" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="phone" placeholder="Your Phone" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <p class="footer-rights">&copy; 2025 Landmark PVR. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="{% url 'privacy_policy' %}" class="footer-link">Privacy Policy</a> |
+                <a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms and Conditions</a>
+                <a href="/about_us/" class="footer-link">About Us</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

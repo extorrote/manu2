@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title Tag (Essential for SEO) -->
+<title>Professional Property Management in Puerto Vallarta | Landmark PVR</title>
+
+<!-- Meta Description (Important for SEO & Click-Through Rate) -->
+<meta name="description" content="Maximize your investment with Landmark PVR's expert property management services in Puerto Vallarta. From marketing to maintenance, we handle it all.">
+
+<!-- Meta Keywords (Not as important for Google but useful for other search engines) -->
+<meta name="keywords" content="property management Puerto Vallarta, vacation rental management, real estate services, luxury rental management, Landmark PVR">
+
+<!-- Author Information -->
+<meta name="author" content="www.webdevelopermx.com">
+
+<!-- Robots Meta Tag (Ensures Search Engines Can Crawl & Index the Site) -->
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Tags (Optimizes the Website for Facebook and Social Media Sharing) -->
+<meta property="og:title" content="Expert Property Management in Puerto Vallarta | Landmark PVR">
+<meta property="og:description" content="Reliable property management in Puerto Vallarta. We handle bookings, maintenance, and guest services for vacation rentals and luxury properties.">
+<meta property="og:image" content="{%static '/images/property_management_og_image.png'%}">
+<meta property="og:url" content="https://www.landmarkvallarta.com/property_management">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Tags (Optimizes the Website for Twitter Sharing) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Puerto Vallarta Property Management | Landmark PVR">
+<meta name="twitter:description" content="Trust Landmark PVR for seamless vacation rental management in Puerto Vallarta. Maximize your revenue with our expert services.">
+<meta name="twitter:image" content="{%static '/images/property_management_og_image.png'%}">
+
+<!-- Local SEO Meta Tags (Helps Search Engines Understand Your Location) -->
+<meta name="geo.region" content="MX-JAL">
+<meta name="geo.placename" content="Puerto Vallarta, Jalisco, Mexico">
+<meta name="geo.position" content="20.6534;-105.2253">
+<meta name="ICBM" content="20.6534, -105.2253">
+
+<!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+<link rel="canonical" href="https://www.landmarkvallarta.com/property_management">
+
+<!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+<link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+<link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+
+<!-- Structured Data (Schema Markup for Better Search Visibility) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Landmark PVR Property Management",
+  "url": "https://www.landmarkvallarta.com/property_management",
+  "image": "https://www.landmarkvallarta.com/images/logo.png",
+  "description": "Expert property management services in Puerto Vallarta. We handle bookings, guest services, and maintenance to maximize your rental income.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "puerto vallarta",
+    "addressLocality": "Puerto Vallarta",
+    "addressRegion": "Jalisco",
+    "postalCode": "48300",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "20.6534",
+    "longitude": "-105.2253"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+17279468985",
+    "contactType": "customer service"
+  }
+}
+</script>
+<!-- END OF META TAGS -->
+
+    <link rel="stylesheet" href="{% static 'css/property_management.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles_menu.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/fuentes.css' %}"><!--ESTO ES PARA CARGAR FUENTES NUEVAS-->
+
+
+
+    </head>
+
+        <div class="slider-container">
+            <div class="menu-overlay">
+                <nav>
+                <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="icono"> <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="white"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg></label>
+
+                <div class="menu">
+                    <ul>
+
+
+                        <!-- li class="poner_margin_open_menu_mobile no-wrap1"><a href="{%url  'property_management' %}">POPERTY MANAGEMENT</a></li>    -->
+                        <li class="poner_margin_open_menu_mobile  no-wrap2" ><a href="{% url 'private_chef'%}">PRIVATE CHEF</a></li>
+
+                        <li class="poner_margin_open_menu_mobile no-wrap2" ><a href="{%url 'about_us'%}">ABOUT US</a></li>
+                        <li class="poner_margin_open_menu_mobile"><a href="{%url 'contact'%}">CONTACT</a></li>
+                        <li class="poner_margin_open_menu_mobile"><a href="{%url 'list_condos'%}">HOME</a></li>
+                        <!--  <li class="poner_margin_open_menu_mobile"><a href="{% url 'list_condos'%}">HOME</a></li>   -->
+                    </ul>
+                </div>
+            </nav>
+            </div>
+
+            <img src="{% static 'images/image_desk1.jpg' %}" class="active" alt="Image 1 ">
+        <img src="{% static 'images/image_desk2.jpg' %}" alt="Image 2 ">
+        <img src="{% static 'images/image_desk3.jpg' %}" alt="Image 3 ">
+        <img src="{% static 'images/image_desk4.jpg' %}" alt="Image 4 ">
+        <img src="{% static 'images/image_desk5.jpg' %}" alt="Image 5 ">
+        <img src="{% static 'images/image_desk6.jpg' %}" alt="Image 6 ">
+        <img src="{% static 'images/image_desk7.jpg' %}" alt="Image 7 ">
+        <img src="{% static 'images/image_desk8.jpg' %}" alt="Image 8 ">
+        <img src="{% static 'images/image_desk9.jpg' %}" alt="Image 9 ">
+        <img src="{% static 'images/image_desk10.jpg' %}" alt="Image 10 ">
+
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-container img');
+        const totalImages = images.length;
+
+        const nextImage = () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextImage, 4000); // Change image every 3 seconds
+    </script>
+    <!-- ############################################################# FIN HEADER ##########################################################-->
+
+
+<body>
+    <div class="container">
+        <div class="logo"><image src="{%static 'images/logo_property_management.png'%}"></div>
+        <!--<img src="{% static 'images/property_management_section.png' %}" alt="Property Management"  class="header-image">  -->
+        <div class="container_secundario">
+        <p>Landmark PVR is a luxury property management company that provides concierge service,luxury properties, maintenance, and supervision services.</p>
+        <p>We ensure that your property is always in top condition</p>
+
+        <div class="section">
+            <h2>Rental Management</h2>
+            <p>If you wish to rent your property, we will focus on promoting it and providing its respective administration (electricity services, internet, HOA) and any other necessary services.</p>
+            <p>We will establish a conversation with guests to introduce ourselves and request information, which allows us to generate access to the condo and ensure a dynamic and comfortable entry, as well as coordinate the arrival time to welcome them, give a tour of the property, and explain the amenities offered.</p>
+        </div>
+
+        <div class="section">
+            <h2>Additional Services</h2>
+            <p>A private chef service will be offered, focused on the guests' requests, providing a unique experience.</p>
+            <p>Transportation service if requested, whether for long trips or waiting at the airport.</p>
+        </div>
+
+        <div class="section">
+            <h2>Support During the Stay</h2>
+            <p>Also, during the stay, guests will be contacted occasionally to provide assistance if necessary and support in emergency situations.</p>
+        </div>
+
+        <div class="section">
+            <h2>Maintenance</h2>
+            <p>Maintenance will be provided weekly, taking care of gardening, repairs if necessary, such as fans, A/C, pools, painting details, among others.</p>
+            <p>These maintenance tasks are adapted to the owners' requests to achieve their peace of mind.</p>
+        </div>
+
+        <div class="section">
+            <h2>Cleaning</h2>
+            <p>Weekly or as needed, general cleaning of the property will be scheduled, which prevents moisture and deterioration of items.</p>
+            <p>An inventory of cleaning supplies will be taken to avoid their shortage.</p>
+        </div>
+
+
+        </div><!-- CIERRE CONTAINER SECUNDARIO-->
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info-container">
+                <h2>Ready to experience the Landmark PVR difference? Get in touch with us today!</h2>
+                <div class="contact-methods">
+                    <a href="https://wa.me/+17279468985" class="social-icon whatsapp"></a>
+                    <a href="https://www.instagram.com/youragency" target="_blank" class="social-icon instagram"></a>
+                    <a href="https://www.facebook.com/LANDMARKPVR?mibextid=wwXIfr" target="_blank" class="social-icon facebook"></a>
+                    <a href="https://www.youtube.com/@casapv" target="_blank" class="social-icon youtube"></a>
+                </div>
+
+            </div>
+
+                <div class="footer-info">
+
+                    <p><strong>Phone:</strong> +17279468985  </p>
+                    <p><strong>Atention Hours:</strong> Monday to Friday, 10 AM - 6 PM</p>
+                </div>
+            </div>
+            <div class="footer-form-container">
+
+                <form method="post" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="phone" placeholder="Your Phone" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <p class="footer-rights">&copy; 2025 Landmark PVR. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="{% url 'index' %}" class="footer-link">Privacy Policy</a> |
+                <a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms and Conditions</a>
+                <a href="/about_us/" class="footer-link">About Us</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

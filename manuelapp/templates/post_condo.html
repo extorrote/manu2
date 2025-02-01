@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%load static%}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title Tag (Essential for SEO) -->
+  <title>Post Condo for Landmark PVR Luxury Vacation Rentals & Property Management in Puerto Vallarta </title>
+
+  <!-- Meta Description (Important for SEO & Click-Through Rate) -->
+  <meta name="description" content="Discover Landmark PVR, your premier choice for luxury vacation rentals and professional property management in Puerto Vallarta, Mexico. Exclusive beachfront villas & high-end condos.">
+
+  <!-- Meta Keywords (Not as important for Google but useful for other search engines) -->
+  <meta name="keywords" content="luxury rentals Puerto Vallarta, vacation rentals Puerto Vallarta, property management Puerto Vallarta, beachfront villas, luxury condos, Landmark PVR">
+
+  <!-- Author Information -->
+  <meta name="author" content="www.webdevelopermx.com">
+
+  <!-- Robots Meta Tag (Ensures Search Engines Can Crawl & Index the Site) -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Tags (Optimizes the Website for Facebook and Social Media Sharing) -->
+  <meta property="og:title" content="Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+  <meta property="og:description" content="Explore our exclusive collection of luxury vacation rentals and professional property management services in Puerto Vallarta, Mexico.">
+  <meta property="og:image" content="{%static '/images/og_image.png'%}">
+  <meta property="og:url" content="https://www.landmarkvallarta.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Tags (Optimizes the Website for Twitter Sharing) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Luxury Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+  <meta name="twitter:description" content="Book a luxury vacation rental in Puerto Vallarta with Landmark PVR. Explore beachfront villas and exclusive properties.">
+  <meta name="twitter:image" content="{%static '/images/og_image.png'%}">
+
+  <!-- Local SEO Meta Tags (Helps Search Engines Understand Your Location) -->
+  <meta name="geo.region" content="MX-JAL">
+  <meta name="geo.placename" content="Puerto Vallarta, Jalisco, Mexico">
+  <meta name="geo.position" content="20.6534;-105.2253">
+  <meta name="ICBM" content="20.6534, -105.2253">
+
+  <!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+  <link rel="canonical" href="https://www.landmarkvallarta.com">
+
+  <!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+  <link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+  <link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+
+  <!-- Structured Data (Schema Markup for Better Search Visibility) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Landmark PVR",
+    "url": "https://www.landmarkvallarta.com",
+    "image": "https://www.landmarkvallarta.com/images/logo.png",
+    "description": "Luxury vacation rentals and high-end property management services in Puerto Vallarta, Mexico.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "puerto vallarta",
+      "addressLocality": "Puerto Vallarta",
+      "addressRegion": "Jalisco",
+      "postalCode": "48300",
+      "addressCountry": "MX"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "20.6534",
+      "longitude": "-105.2253"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+17279468985",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+<!-- FIN DE META TAGS -->
+
+
+
+
+  <title>List Your Property</title>
+
+  <link rel="stylesheet" href="{% static 'css/post_condos.css'%}">
+</head>
+<body>
+  <header>
+    <div class="logo"><image src="{%static 'images/logo_property_management.png'%}"></div>  
+    <a class="home-button home" href="{% url 'index'  %}" data-aos="fade-up">Go Back </a>
+  </header>
+
+  <form method="post" enctype="multipart/form-data" class="fancy-form">
+      <!-- Contact Buttons HAY QUE AGREGAR LA FUENTE AWESOME -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- Contact Buttons -->
+
+
+
+    {% csrf_token %}
+
+    <!-- Display errors -->
+    <div class="form-errors">
+      {{ form.non_field_errors }}
+    </div>
+
+    <!-- Form Fields -->
+    <div class="form-group animate">
+      <label for="{{ form.development_name.id_for_label }}" class="form-label">Development Name</label>
+      {{ form.development_name }}
+      {{ form.development_name.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.neighborhood.id_for_label }}" class="form-label">Neighborhood</label>
+      {{ form.neighborhood }}
+      {{ form.neighborhood.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.primary_view.id_for_label }}" class="form-label">Primary View</label>
+      {{ form.primary_view }}
+      {{ form.primary_view.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.secondary_view.id_for_label }}" class="form-label">Secondary View</label>
+      {{ form.secondary_view }}
+      {{ form.secondary_view.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.bedrooms.id_for_label }}" class="form-label">Bedrooms</label>
+      {{ form.bedrooms }}
+      {{ form.bedrooms.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.bathrooms.id_for_label }}" class="form-label">Bathrooms</label>
+      {{ form.bathrooms }}
+      {{ form.bathrooms.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.property_type.id_for_label }}" class="form-label">Property Type</label>
+      {{ form.property_type }}
+      {{ form.property_type.errors }}
+    </div>
+    <div class="form-group animate">
+      <label for="{{ form.holiday_season.id_for_label }}" class="form-label">Price Per Night</label>
+      {{ form.holiday_season }}
+      {{ form.holiday_season.errors }}
+    </div>
+
+  
+
+    <div class="form-group animate">
+      <label for="{{ form.refundable_damage_deposit.id_for_label }}" class="form-label">Refundable Damage Deposit</label>
+      {{ form.refundable_damage_deposit }}
+      {{ form.refundable_damage_deposit.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.night_minimum.id_for_label }}" class="form-label">Night Minimum</label>
+      {{ form.night_minimum }}
+      {{ form.night_minimum.errors }}
+    </div>
+    
+    <div class="form-group animate">
+      <label for="{{ form.max_people.id_for_label }}" class="form-label">Max People</label>
+      {{ form.max_people }}
+      {{ form.max_people.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.hot_water.id_for_label }}" class="form-label">Hot Water</label>
+      {{ form.hot_water }}
+      {{ form.hot_water.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.air_conditioning.id_for_label }}" class="form-label">Air Conditioning</label>
+      {{ form.air_conditioning }}
+      {{ form.air_conditioning.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.on_site_gym.id_for_label }}" class="form-label">Onsite Gym</label>
+      {{ form.on_site_gym }}
+      {{ form.on_site_gym.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.swimming_pool.id_for_label }}" class="form-label">Swimming Pool</label>
+      {{ form.swimming_pool }}
+      {{ form.swimming_pool.errors }}
+    </div>
+
+
+
+    <div class="form-group animate">
+      <label for="{{ form.security.id_for_label }}" class="form-label">Security</label>
+      {{ form.security }}
+      {{ form.security.errors }}
+    </div>
+
+
+
+    <div class="form-group animate">
+      <label for="{{ form.pet_friendly.id_for_label }}" class="form-label">Pet Friendly</label>
+      {{ form.pet_friendly }}
+      {{ form.pet_friendly.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.children_under_12.id_for_label }}" class="form-label">Children Under 12 Allowed</label>
+      {{ form.children_under_12 }}
+      {{ form.children_under_12.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.smoking_allowed.id_for_label }}" class="form-label">Smoking Allowed</label>
+      {{ form.smoking_allowed }}
+      {{ form.smoking_allowed.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.appliances.id_for_label }}" class="form-label">Appliances</label>
+      {{ form.appliances }}
+      {{ form.appliances.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.horario_checking.id_for_label }}" class="form-label">Checking Time</label>
+      {{ form.horario_checking }}
+      {{ form.horario_checking.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.horario_checkout.id_for_label }}" class="form-label">Checkout Time</label>
+      {{ form.horario_checkout }}
+      {{ form.horario_checkout.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.extra_description.id_for_label }}" class="form-label">Extra Description</label>
+      {{ form.extra_description }}
+      {{ form.extra_description.errors }}
+    </div>
+
+
+    <div class="form-group image-group animate">
+      <label class="form-label">Property Images</label>
+      <div class="image-input">
+        <label for="{{ form.imagen1.id_for_label }}">Image #1</label>
+        {{ form.imagen1 }}
+        {{ form.imagen1.errors }}
+      </div>
+      <div class="image-input">
+        <label for="{{ form.imagen2.id_for_label }}">Image #2</label>
+        {{ form.imagen2 }}
+        {{ form.imagen2.errors }}
+      </div>
+      <div class="image-input">
+        <label for="{{ form.imagen3.id_for_label }}">Image #3</label>
+        {{ form.imagen3 }}
+        {{ form.imagen3.errors }}
+      </div>
+      <div class="image-input">
+        <label for="{{ form.imagen4.id_for_label }}">Image #4</label>
+        {{ form.imagen4 }}
+        {{ form.imagen4.errors }}
+      </div>
+      <div class="image-input">
+        <label for="{{ form.imagen5.id_for_label }}">Image #5</label>
+        {{ form.imagen5 }}
+        {{ form.imagen5.errors }}
+      </div>
+      <div class="image-input">
+        <label for="{{ form.imagen6.id_for_label }}">Image #6</label>
+        {{ form.imagen6 }}
+        {{ form.imagen6.errors }}
+      </div>
+      <div class="image-input">
+        <label for="{{ form.imagen7.id_for_label }}">Image #7</label>
+        {{ form.imagen7 }}
+        {{ form.imagen7.errors }}
+      </div>
+      <div class="image-input">
+        <label for="{{ form.imagen8.id_for_label }}">Image #8</label>
+        {{ form.imagen8 }}
+        {{ form.imagen8.errors }}
+      </div>
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.youtube_iframe.id_for_label }}" class="form-label">Youtube iframe</label>
+      {{ form.youtube_iframe }}
+      {{ form.youtube_iframe.errors }}
+    </div>
+
+    <div class="form-group animate">
+      <label for="{{ form.google_maps.id_for_label }}" class="form-label">Google Maps iframe</label>
+      {{ form.google_maps }}
+      {{ form.google_maps.errors }}
+    </div>
+
+   
+
+    <button type="submit" class="btn-primary">Submit</button>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.animate');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Stop observing after animation
+          }
+        });
+      }, {
+        threshold: 0.1 // Adjust based on when you want the animation to trigger
+      });
+
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+
+
+</body>
+</html>

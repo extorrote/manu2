@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+
+
+  <!-- Title -->
+  {% if condo %}
+  <title>Luxury Vacation Rental in {{ condo.development_name }} Puerto Vallarta Mexico</title>
+  <meta property="og:image" content="{{ condo.imagen1.url }}">
+  <meta property="og:title" content="{{ condo.development_name }} {{condo.neighborhood}} $ {{condo.holiday_season}} Per Night">
+  <meta name="description" content=" Luxury Vacational Rental in One of The Best Locations in Puerto Vallarta {{ condo.neighborhood }}">
+  <meta property="og:description" content="Luxury Vacational Rental in One of The Best Locations in Puerto Vallarta {{ condo.neighborhood }}">
+  <meta name="twitter:title" content="{{ condo.development_name }} {{condo.neighborhood}} $ {{condo.holiday_season}} Per Night">
+  <meta name="twitter:description" content="Luxury Vacational Rental in One of The Best Locations in Puerto Vallarta{{ condo.neighborhood }}">
+  <meta name="twitter:image" content="{{ condo.imagen1.url }}">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta name="keywords" content="luxury vacation rentals, Puerto Vallarta, ocean view rentals, mountain view rentals, secure vacation homes, swimming pool, jacuzzi, gym, luxury properties Puerto Vallarta, vacation rentals Mexico">
+  <meta name="author" content="www.webdevelopermx.com">
+  <meta name="robots" content="index, follow">
+  <!-- Local SEO Meta Tags (Helps Search Engines Understand Your Location) -->
+  <meta name="geo.region" content="MX-JAL">
+  <meta name="geo.placename" content="Puerto Vallarta, Jalisco, Mexico">
+  <meta name="geo.position" content="20.6534;-105.2253">
+  <meta name="ICBM" content="20.6534, -105.2253">
+  <!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+  <link rel="canonical" href="https://www.landmarkvallarta.com/condo_detail">
+  <!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+  <link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+  <link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+
+  <!-- Structured Data (Schema Markup for Better Search Visibility) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Landmark PVR",
+    "url": "https://www.landmarkvallarta.com",
+    "image": "https://www.landmarkvallarta.com/images/logo.png",
+    "description": "Luxury vacation rentals and high-end property management services in Puerto Vallarta, Mexico.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "puerto vallarta",
+      "addressLocality": "Puerto Vallarta",
+      "addressRegion": "Jalisco",
+      "postalCode": "48300",
+      "addressCountry": "MX"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "20.6534",
+      "longitude": "-105.2253"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+17279468985",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+  {% else %}
+
+       <!-- Title Tag (Essential for SEO) -->
+       <title>Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR</title>
+
+       <!-- Meta Description (Important for SEO & Click-Through Rate) -->
+       <meta name="description" content="Discover Landmark PVR, your premier choice for luxury vacation rentals and professional property management in Puerto Vallarta, Mexico. Exclusive beachfront villas & high-end condos.">
+
+       <!-- Meta Keywords (Not as important for Google but useful for other search engines) -->
+       <meta name="keywords" content="luxury rentals Puerto Vallarta, vacation rentals Puerto Vallarta, property management Puerto Vallarta, beachfront villas, luxury condos, Landmark PVR">
+
+       <!-- Author Information -->
+       <meta name="author" content="www.webdevelopermx.com">
+
+       <!-- Robots Meta Tag (Ensures Search Engines Can Crawl & Index the Site) -->
+       <meta name="robots" content="index, follow">
+
+       <!-- Open Graph Tags (Optimizes the Website for Facebook and Social Media Sharing) -->
+       <meta property="og:title" content="Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+       <meta property="og:description" content="Explore our exclusive collection of luxury vacation rentals and professional property management services in Puerto Vallarta, Mexico.">
+       <meta property="og:image" content="{%static '/images/og_image.png'%}">
+       <meta property="og:url" content="https://www.landmarkvallarta.com">
+       <meta property="og:type" content="website">
+
+       <!-- Twitter Card Tags (Optimizes the Website for Twitter Sharing) -->
+       <meta name="twitter:card" content="summary_large_image">
+       <meta name="twitter:title" content="Luxury Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+       <meta name="twitter:description" content="Book a luxury vacation rental in Puerto Vallarta with Landmark PVR. Explore beachfront villas and exclusive properties.">
+       <meta name="twitter:image" content="{%static '/images/og_image.png'%}">
+
+       <!-- Local SEO Meta Tags (Helps Search Engines Understand Your Location) -->
+       <meta name="geo.region" content="MX-JAL">
+       <meta name="geo.placename" content="Puerto Vallarta, Jalisco, Mexico">
+       <meta name="geo.position" content="20.6534;-105.2253">
+       <meta name="ICBM" content="20.6534, -105.2253">
+
+       <!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+       <link rel="canonical" href="https://www.landmarkvallarta.com">
+
+       <!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+       <link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+       <link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+
+       <!-- Structured Data (Schema Markup for Better Search Visibility) -->
+       <script type="application/ld+json">
+       {
+         "@context": "https://schema.org",
+         "@type": "LodgingBusiness",
+         "name": "Landmark PVR",
+         "url": "https://www.landmarkvallarta.com/condo_detail",
+         "image": "https://www.landmarkvallarta.com/static/images/og_image.png",
+         "description": "Luxury vacation rentals and high-end property management services in Puerto Vallarta, Mexico.",
+         "address": {
+           "@type": "PostalAddress",
+           "streetAddress": "puerto vallarta",
+           "addressLocality": "Puerto Vallarta",
+           "addressRegion": "Jalisco",
+           "postalCode": "48300",
+           "addressCountry": "MX"
+         },
+         "geo": {
+           "@type": "GeoCoordinates",
+           "latitude": "20.6534",
+           "longitude": "-105.2253"
+         },
+         "contactPoint": {
+           "@type": "ContactPoint",
+           "telephone": "+17279468985",
+           "contactType": "customer service"
+         }
+       }
+       </script>
+       {% endif %}
+<!-- FIN DE META TAGS -->
+
+
+   <!-- ESTOS SON PARA TODO LO QUE TIENE QUE VER CON EL openModal , y  swipper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href= {% static 'css/condo_details.css'%}/>
+<link rel="stylesheet" type="text/css" href= {% static 'css/styles_menu.css'%}/>
+<link rel="stylesheet" type="text/css" href= {% static 'css/footers.css'%}/>
+<link rel="stylesheet" type="text/css" href= {% static 'css/fuentes.css'%}/>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="menu-overlay">
+            <nav>
+            <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="icono"> <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#ffffff"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg></label>
+
+            <div class="menu">
+                <ul>
+                    <!-- <li class="poner_margin_open_menu_mobile"><a href="{% url 'index'%}">HOME</a></li> -->
+                   <!-- <li class="poner_margin_open_menu_mobile"><a href="{%url 'index'%}">RENTALS</a></li>   -->
+                    <li class="poner_margin_open_menu_mobile no-wrap1"><a href="{%url  'property_management' %}">POPERTY MANAGEMENT</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap2"><a href="{% url 'private_chef'%}">PRIVATE CHEF</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap2" ><a href="{%url 'index'%}">ABOUT US</a></li>
+                    <li class="poner_margin_open_menu_mobile"><a href="{%url 'contact'%}">CONTACT</a></li>
+                    <li class="poner_margin_open_menu_mobile"><a href="{%url 'index'%}">GO BACK</a></li>
+               </ul>
+            </div>
+        </nav>
+
+
+
+        </div>
+
+
+
+
+            <img src="{% static 'images/image_desk1.jpg' %}" class="active" alt="Image 1 ">
+        <img src="{% static 'images/image_desk2.jpg' %}" alt="Image 2 ">
+        <img src="{% static 'images/image_desk3.jpg' %}" alt="Image 3 ">
+        <img src="{% static 'images/image_desk4.jpg' %}" alt="Image 4 ">
+        <img src="{% static 'images/image_desk5.jpg' %}" alt="Image 5 ">
+        <img src="{% static 'images/image_desk6.jpg' %}" alt="Image 6 ">
+        <img src="{% static 'images/image_desk7.jpg' %}" alt="Image 7 ">
+        <img src="{% static 'images/image_desk8.jpg' %}" alt="Image 8 ">
+        <img src="{% static 'images/image_desk9.jpg' %}" alt="Image 9 ">
+        <img src="{% static 'images/image_desk10.jpg' %}" alt="Image 10 ">
+
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-container img');
+        const totalImages = images.length;
+
+        const nextImage = () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextImage, 4000); // Change image every 3 seconds
+    </script>
+    <!-- ############################################################# FIN HEADER ##########################################################-->
+
+
+    <div class="container" id="container" >
+
+<div class="info_principio">
+        <h1 > Beautiful Vacational Rental  {{ condo.development_name }} in Puerto Vallarta</h1>
+        <div class="logo"><image src="{%static 'images/logo_property_management.png'%}"></div>
+</div><!--CIERRE INFO PRINCIPIO -->
+
+
+
+        <div class="swiper-container" data-aos="fade-up">
+            <a class="reserve-button arriba" href="{% url 'reserve_condo' condo.id %}" data-aos="fade-up">Reserve Now </a>
+
+
+            <div class="swiper-wrapper">
+                {% if condo.imagen1 and condo.imagen1.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen1.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen1.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if condo.imagen2 and condo.imagen2.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen2.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen2.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if condo.imagen3 and condo.imagen3.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen3.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen3.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if condo.imagen4 and condo.imagen4.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen4.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen4.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if condo.imagen5 and condo.imagen5.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen5.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen5.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if condo.imagen6 and condo.imagen6.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen6.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen6.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if condo.imagen7 and condo.imagen7.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen7.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }} " src="{{ condo.imagen7.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if condo.imagen8 and condo.imagen8.url %}
+                <div class="swiper-slide">
+                    <a href="{{ condo.imagen8.url }}" class="fancybox" data-fancybox="gallery">
+                        <img alt="{{condo.development_name}} {{ condo.neighborhood }}" src="{{ condo.imagen8.url }}" />
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+
+        <h4>{{ condo.development_name }} </h4>
+        <div class="property-info">
+
+
+
+
+        <div class="property-card"  data-aos="fade-up">
+            <strong >Bedrooms:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M200-280h60v-60h440v60h60v-154q0-21-8-39.5T730-506v-94q0-33-23.5-56.5T650-680H520q-11 0-21 3t-19 9q-9-6-19-9t-21-3H310q-33 0-56.5 23.5T230-600v94q-14 14-22 32.5t-8 39.5v154Zm60-120v-40q0-17 11.5-28.5T300-480h360q17 0 28.5 11.5T700-440v40H260Zm30-140v-80h160v80H290Zm220 0v-80h160v80H510ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0 0v-640 640Z"/></svg></strong> {{ condo.bedrooms }}
+        </div>
+
+        <div class="property-card"  data-aos="fade-up">
+            <strong >Bathrooms:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M220-80v-300h-60v-220q0-33 23.5-56.5T240-680h120q33 0 56.5 23.5T440-600v220h-60v300H220Zm80-640q-33 0-56.5-23.5T220-800q0-33 23.5-56.5T300-880q33 0 56.5 23.5T380-800q0 33-23.5 56.5T300-720ZM600-80v-240H480l102-306q8-26 29.5-40t48.5-14q27 0 48.5 14t29.5 40l102 306H720v240H600Zm60-640q-33 0-56.5-23.5T580-800q0-33 23.5-56.5T660-880q33 0 56.5 23.5T740-800q0 33-23.5 56.5T660-720Z"/></svg></strong> {{ condo.bathrooms }}
+        </div>
+
+        <div class="property-card"  data-aos="fade-up">
+            <strong >Price Per Night:</strong> <strong style="color:green"> $ {{ condo.holiday_season }} USD </strong>
+        </div>
+
+
+        <div class="property-card" data-aos="fade-up">
+            <strong >Neighborhood: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M800-560v-120H680v-80h120q33 0 56.5 23.5T880-680v120h-80Zm-720 0v-120q0-33 23.5-56.5T160-760h120v80H160v120H80Zm600 360v-80h120v-120h80v120q0 33-23.5 56.5T800-200H680Zm-520 0q-33 0-56.5-23.5T80-280v-120h80v120h120v80H160Z"/></svg></strong> {{ condo.neighborhood }}
+        </div>
+
+            <div class="property-card" data-aos="fade-up">
+                <strong>Property Type: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg></strong> {{ condo.property_type }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Primary View:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm80-80h480L570-520 450-360l-90-120-120 160Zm-80 80v-480 480Z"/></svg></strong> {{ condo.primary_view }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Secondary View:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm80-80h480L570-520 450-360l-90-120-120 160Zm-80 80v-480 480Z"/></svg></strong> {{ condo.secondary_view }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Hot Water:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M320-240q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm160 0q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm160 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240ZM200-400v-80q0-106 68-184t172-92v-84h80v84q104 14 172 92t68 184v80H200Zm80-80h400q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480Zm40 360q-17 0-28.5-11.5T280-160q0-17 11.5-28.5T320-200q17 0 28.5 11.5T360-160q0 17-11.5 28.5T320-120Zm160 0q-17 0-28.5-11.5T440-160q0-17 11.5-28.5T480-200q17 0 28.5 11.5T520-160q0 17-11.5 28.5T480-120Zm160 0q-17 0-28.5-11.5T600-160q0-17 11.5-28.5T640-200q17 0 28.5 11.5T680-160q0 17-11.5 28.5T640-120ZM480-480Z"/></svg></strong> {{ condo.hot_water }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Air Conditioning: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M440-80v-166L310-118l-56-56 186-186v-80h-80L174-254l-56-56 128-130H80v-80h166L118-650l56-56 186 186h80v-80L254-786l56-56 130 128v-166h80v166l130-128 56 56-186 186v80h80l186-186 56 56-128 130h166v80H714l128 130-56 56-186-186h-80v80l186 186-56 56-130-128v166h-80Z"/></svg></strong> {{ condo.air_conditioning }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Appliances:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h400v-480H160v480Zm480 0h160v-480H640v480Zm40-360h80v-80h-80v80Zm40 160q17 0 28.5-11.5T760-480q0-17-11.5-28.5T720-520q-17 0-28.5 11.5T680-480q0 17 11.5 28.5T720-440Zm0 160q17 0 28.5-11.5T760-320q0-17-11.5-28.5T720-360q-17 0-28.5 11.5T680-320q0 17 11.5 28.5T720-280Zm-310-40q-24 0-41.5-9T338-346q-10-7-16-10.5t-12-3.5q-11 0-22 9t-16 15l-57-56q11-12 35.5-30t59.5-18q24 0 41.5 9.5T382-413q9 6 16 9.5t12 3.5q11 0 22-9t16-15l57 56q-11 12-35.5 30T410-320Zm0-200q-24 0-41.5-9T338-546q-10-7-16-10.5t-12-3.5q-11 0-22 9t-16 15l-57-56q11-12 35.5-30t59.5-18q24 0 41.5 9.5T382-613q9 6 16 9.5t12 3.5q11 0 22-9t16-15l57 56q-11 12-35.5 30T410-520Zm230 280v-480 480Z"/></svg></strong> {{ condo.appliances }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Swimming Pool:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M80-120v-80q38 0 57-20t75-20q56 0 77 20t57 20q36 0 57-20t77-20q56 0 77 20t57 20q36 0 57-20t77-20q56 0 75 20t57 20v80q-59 0-77.5-20T748-160q-36 0-57 20t-77 20q-56 0-77-20t-57-20q-36 0-57 20t-77 20q-56 0-77-20t-57-20q-36 0-54.5 20T80-120Zm0-180v-80q38 0 57-20t75-20q56 0 77.5 20t56.5 20q36 0 57-20t77-20q56 0 77 20t57 20q36 0 57-20t77-20q56 0 75 20t57 20v80q-59 0-77.5-20T748-340q-36 0-55.5 20T614-300q-57 0-77.5-20T480-340q-38 0-56.5 20T346-300q-59 0-78.5-20T212-340q-36 0-54.5 20T80-300Zm196-204 133-133-40-40q-33-33-70-48t-91-15v-100q75 0 124 16.5t96 63.5l256 256q-17 11-33 17.5t-37 6.5q-36 0-57-20t-77-20q-56 0-77 20t-57 20q-21 0-37-6.5T276-504Zm392-336q42 0 71 29.5t29 70.5q0 42-29 71t-71 29q-42 0-71-29t-29-71q0-41 29-70.5t71-29.5Z"/></svg></strong> {{ condo.swimming_pool }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Onsite Gym: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="m826-585-56-56 30-31-128-128-31 30-57-57 30-31q23-23 57-22.5t57 23.5l129 129q23 23 23 56.5T857-615l-31 30ZM346-104q-23 23-56.5 23T233-104L104-233q-23-23-23-56.5t23-56.5l30-30 57 57-31 30 129 129 30-31 57 57-30 30Zm397-336 57-57-303-303-57 57 303 303ZM463-160l57-58-302-302-58 57 303 303Zm-6-234 110-109-64-64-109 110 63 63Zm63 290q-23 23-57 23t-57-23L104-406q-23-23-23-57t23-57l57-57q23-23 56.5-23t56.5 23l63 63 110-110-63-62q-23-23-23-57t23-57l57-57q23-23 56.5-23t56.5 23l303 303q23 23 23 56.5T857-441l-57 57q-23 23-57 23t-57-23l-62-63-110 110 63 63q23 23 23 56.5T577-161l-57 57Z"/></svg></strong> {{ condo.on_site_gym }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Security: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M480-440q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0-80q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0 440q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-400Zm0-315-240 90v189q0 54 15 105t41 96q42-21 88-33t96-12q50 0 96 12t88 33q26-45 41-96t15-105v-189l-240-90Zm0 515q-36 0-70 8t-65 22q29 30 63 52t72 34q38-12 72-34t63-52q-31-14-65-22t-70-8Z"/></svg></strong> {{ condo.security|yesno:"Yes,No" }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Refundable Damage Deposit:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M260-361v-40H160v-80h200v-80H200q-17 0-28.5-11.5T160-601v-160q0-17 11.5-28.5T200-801h60v-40h80v40h100v80H240v80h160q17 0 28.5 11.5T440-601v160q0 17-11.5 28.5T400-401h-60v40h-80Zm298 240L388-291l56-56 114 114 226-226 56 56-282 282Z"/></svg></strong> ${{ condo.refundable_damage_deposit }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Max People:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M40-160v-160q0-34 23.5-57t56.5-23h131q20 0 38 10t29 27q29 39 71.5 61t90.5 22q49 0 91.5-22t70.5-61q13-17 30.5-27t36.5-10h131q34 0 57 23t23 57v160H640v-91q-35 25-75.5 38T480-200q-43 0-84-13.5T320-252v92H40Zm440-160q-38 0-72-17.5T351-386q-17-25-42.5-39.5T253-440q22-37 93-58.5T480-520q63 0 134 21.5t93 58.5q-29 0-55 14.5T609-386q-22 32-56 49t-73 17ZM160-440q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T280-560q0 50-34.5 85T160-440Zm640 0q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T920-560q0 50-34.5 85T800-440ZM480-560q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-680q0 50-34.5 85T480-560Z"/></svg></strong> {{ condo.max_people }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Children Under 12 Allowed:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M720-720q-33 0-56.5-23.5T640-800q0-33 23.5-56.5T720-880q33 0 56.5 23.5T800-800q0 33-23.5 56.5T720-720ZM680-80v-320q0-40-20.5-72T607-522l35-103q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l102 305H800v240H680ZM500-500q-25 0-42.5-17.5T440-560q0-25 17.5-42.5T500-620q25 0 42.5 17.5T560-560q0 25-17.5 42.5T500-500ZM220-720q-33 0-56.5-23.5T140-800q0-33 23.5-56.5T220-880q33 0 56.5 23.5T300-800q0 33-23.5 56.5T220-720ZM140-80v-280H80v-240q0-33 23.5-56.5T160-680h120q33 0 56.5 23.5T360-600v240h-60v280H140Zm300 0v-160h-40v-160q0-25 17.5-42.5T460-460h80q25 0 42.5 17.5T600-400v160h-40v160H440Z"/></svg></strong> {{ condo.children_under_12 }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Pet Friendly:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M180-475q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180-160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm240 0q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm180 160q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM266-75q-45 0-75.5-34.5T160-191q0-52 35.5-91t70.5-77q29-31 50-67.5t50-68.5q22-26 51-43t63-17q34 0 63 16t51 42q28 32 49.5 69t50.5 69q35 38 70.5 77t35.5 91q0 47-30.5 81.5T694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z"/></svg></strong> {{ condo.pet_friendly }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Smoking Allowed:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M80-200v-120h600v120H80Zm640 0v-120h60v120h-60Zm100 0v-120h60v120h-60ZM720-360v-52q0-39-23-59.5T642-492h-62q-56 0-95-39t-39-95q0-56 39-95t95-39v60q-30 0-52 21t-22 53q0 32 22 53t52 21h62q56 0 97 36t41 90v66h-60Zm100 0v-90q0-66-46-114t-114-48v-60q30 0 52-22t22-52q0-30-22-52t-52-22v-60q56 0 95 39t39 95q0 29-11 52.5T754-650q56 26 91 80t35 120v90h-60Z"/></svg></strong> {{ condo.smoking_allowed }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Night Minimum:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="M560-80q-82 0-155-31.5t-127.5-86Q223-252 191.5-325T160-480q0-83 31.5-155.5t86-127Q332-817 405-848.5T560-880q54 0 105 14t95 40q-91 53-145.5 143.5T560-480q0 112 54.5 202.5T760-134q-44 26-95 40T560-80Zm0-80h21q10 0 19-2-57-66-88.5-147.5T480-480q0-89 31.5-170.5T600-798q-9-2-19-2h-21q-133 0-226.5 93.5T240-480q0 133 93.5 226.5T560-160Zm-80-320Z"/></svg></strong> {{ condo.night_minimum }}
+            </div>
+            <div class="property-card" data-aos="fade-up">
+                <strong>Checking Time:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg></strong> {{ condo.horario_checking }}
+            </div>
+
+            <div class="property-card" data-aos="fade-up">
+                <strong>Checkout Time:<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="darkgoldenrod"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg> </strong>{{ condo.horario_checkout }}
+            </div>
+
+        </div>
+        <div class="property-card " data-aos="fade-up">
+            <strong class="extra_description_strong">Extra Description:</strong><p class="extra_description">{{ condo.extra_description }}</p>
+        </div>
+
+        <div class="contenedor-video-maps">
+            <div class="youtube_video">
+            {% if condo.youtube_iframe %}
+
+                <div class="video-container">{{ condo.youtube_iframe|safe }}</div>
+            {% else %}
+
+            {% endif %}
+            </div>
+            {% if condo.google_maps %}
+
+                <div class="map-container">{{ condo.google_maps|safe }}</div>
+            {% else %}
+            <p data-aos="fade-up">Google Maps location not available for this property.</p>
+            {% endif %}
+        </div>
+
+
+
+        <!-- Ensure the reserve button is styled correctly -->
+        <a class="reserve-button" href="{% url 'reserve_condo' condo.id %}" data-aos="fade-up">Reserve Now </a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            AOS.init({
+                duration: 1000, // Duration of animation
+                easing: 'ease-in-out', // Easing function
+                offset: 0, // Adjust if needed
+            });
+
+            $(".fancybox").fancybox({
+                infobar: false, // Disable the bottom toolbar
+                buttons: [
+                    'close'
+                ],
+                btnTpl: {
+                    close: '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="Close">' +
+                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>' +
+                        '</button>'
+                }
+            });
+
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: {
+                    delay: 3000, // Time in milliseconds between slide changes (3 seconds)
+                    disableOnInteraction: false, // Continue autoplay even after user interaction
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                effect: 'fade', // Add fade effect for smooth transitions
+                fadeEffect: {
+                    crossFade: true
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info-container">
+                <h2>Ready to experience the Landmark PVR difference? Get in touch with us today!</h2>
+                <div class="contact-methods">
+                    <a href="https://wa.me/+17279468985" class="social-icon whatsapp"></a>
+                    <a href="https://www.instagram.com/youragency" target="_blank" class="social-icon instagram"></a>
+                    <a href="https://www.facebook.com/LANDMARKPVR?mibextid=wwXIfr" target="_blank" class="social-icon facebook"></a>
+
+                </div>
+
+            </div>
+
+                <div class="footer-info">
+
+                    <p><strong>Phone:</strong> +17279468985  </p>
+                    <p><strong>Atention Hours:</strong> Monday to Friday, 10 AM - 6 PM</p>
+                </div>
+            </div>
+            <div class="footer-form-container">
+
+                <form method="post" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="phone" placeholder="Your Phone" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <p class="footer-rights">&copy; 2025 Landmark PVR. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="{% url 'index' %}" class="footer-link">Privacy Policy</a> |
+                <a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms and Conditions</a>
+                <a href="/about_us/" class="footer-link">About Us</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landmark PVR</title>
+    <link rel="stylesheet" href="{% static 'css/property_management.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/styles_menu.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/fuentes.css' %}"><!--ESTO ES PARA CARGAR FUENTES NUEVAS-->
+
+<style>
+    .slider-container {
+        position: relative;
+        width: 100%;
+        height: 60vh; /* 60% of viewport height for desktop */
+        animation:slideIn 1.5s .4s ease;
+        
+    }
+    @media screen and (max-width:768px){
+        .slider-container{
+            box-shadow: 0 0  50px white;
+        }
+    }
+    .slider-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .slider-container img.active {
+        opacity: 1;
+    }
+    .menu-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    
+    
+    nav #checkbox, .icono,.submenu ul{
+            
+        display:none;
+     }
+    
+     nav{
+        max-width:900px;
+        width:100%;
+        height:100px;
+        display:flex;
+        margin:auto;
+        background-color:rgba(31, 31, 31, 0.46);
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 440px;
+     }
+    
+     .menu{
+        width:100%;
+        display:flex;
+        margin:auto;
+        justify-content: center;
+        align-items: center;
+     }
+     ul{
+        display:flex;
+        margin: auto;
+        align-items: center;
+        border-radius: 5px;
+     }
+     .menu li{
+        display:flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        margin-left:4px;
+        border-radius: 5px;
+        
+     }
+     
+     
+     li:hover, .submenu a:hover{
+        background-color: #DAA520;
+        transition:background-color .5s;
+     }
+     @media screen and (max-width:768px){
+        li:hover, .submenu a:hover{
+            background-color: initial;
+        }
+     }
+    
+     .menu a{
+        color:white;
+        text-align: center;
+        margin:10px;
+        text-decoration: none;
+        letter-spacing: 4px;
+        text-wrap: nowrap;
+        cursor:pointer;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+     }
+     
+    .submenu li{/*ESTE ES EL TEXTO DEL SUBMENU*/
+        color:white;
+        padding: 9px 20px;
+        cursor: pointer;
+        
+    }
+    
+    .submenu:hover {
+        display:flex;
+        position:relative;
+        margin:auto;
+        flex-direction: column;    
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .submenu:hover ul{
+        width:250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        
+    }
+    
+    
+    
+    @media screen and (max-width:1200px){
+        .submenu:hover {
+            margin-right: 180px;
+        }
+        
+        .menu a  {
+            margin:3px;       
+    }  
+    .submenu > li{
+        margin-left:-10px;
+    }
+    }
+    
+    @media screen and (max-width:768px){
+    nav {
+    animation:slideIn 1.5s .1s ease;
+    }
+    ul{
+    animation:slideUp 1.5s .1s ease;
+    }
+    
+    
+    
+    
+    
+    .submenu > li:first-child{
+        margin-left:0;
+        margin:auto;
+        background-color: #DAA520;
+        width:230px;
+        border-radius: 15px 0px 15px 0;
+        margin-left:25%;
+        margin-top: 10px;
+    }
+    
+    .menu >li:hover{
+     width:250px;
+     margin:5px auto;
+     height:40px;
+     background-color: #DAA520;
+     border-radius: 5px;
+    }
+    
+    
+    .submenu:hover li{
+        margin-right: 0;
+        align-items: center;
+        background-color:transparent;
+        width:100px;
+        
+    }
+    .submenu:hover li:nth-child(2){/*ESTO PORQUE SE ESTE TEXTO ES MAS LARGO Y ME ESTABA QUEDANDO DISPAREJO*/
+        margin-right: 0;
+    }
+    li{
+        margin-top:10px;
+    }
+    .menu a  {
+        margin:2px;
+        letter-spacing: 6px;
+       
+    }
+    
+    .menu{
+        display:none;
+        
+    }
+    nav{
+        width:400px;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        margin-top: 440px;
+    
+    }
+    .menu{
+        margin-top:10px;
+    }
+    .menu li:hover{
+        background-color: #DAA520;
+        margin-bottom: 10px;
+    }
+    .submenu{
+        margin-right:48%;
+        
+    }
+    .submenu li:hover{
+       background-color: transparent;
+    }
+    
+    .icono{
+        display:flex;
+        margin:auto;
+       
+    }
+    #checkbox:checked ~.icono{
+        position:absolute;
+    }
+    
+    
+    #checkbox:checked ~ .menu , .menu ul , .menu li,.menu a, .submenu , .submenu ul,.submenu li, .submenu a{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #checkbox:checked ~ .menu {
+        height:400px;
+        background-color:rgba(31, 31, 31, 0.46);
+        border-radius: 10%;
+    }
+    .menu li{
+        margin-top: 10px;
+       }
+    .submenu li{
+        
+        display:flex;
+        flex-direction: column;
+        margin-left:10px;
+    }
+    
+    
+    }
+</style>
+  
+    </head>
+    <body>
+    <div class="slider-container">
+        <div class="menu-overlay">
+            <nav>
+            <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="icono"> <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="white"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg></label>
+    
+            <div class="menu">
+                <ul>
+                    <li class="poner_margin_open_menu_mobile"><a href="{% url 'index'%}">HOME</a></li>
+                    <li class="poner_margin_open_menu_mobile"><a href="{%url 'index'%}">RENTALS</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap1"><a href="{%url  'property_management' %}">POPERTY MANAGEMENT</a></li>
+                    <li class="poner_margin_open_menu_mobile no-wrap2" ><a href="{%url 'index'%}">ABOUT US</a></li>
+                    <li class="poner_margin_open_menu_mobile"><a href="{%url 'contact'%}">CONTACT</a></li>
+                    
+                        <div class="submenu"><li>SERVICES</li>
+                            <ul>
+                            {%if user.username == 'tony' or user.username == 'kiki'%}
+                            <li><a href="{%url 'index'%}">POST PICTURE </a></li>
+                            {%endif%}
+                            <li><a href="{% url 'private_chef'%}">PRIVATE CHEF</a></li>
+                            <li><a href="{%url 'index'%}">TRANSPORTATION</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                </ul>
+            </div>
+        </nav>
+        </div>
+         
+    <img 
+    srcset="{% static 'images/image_desk1.jpg' %} 1700w,
+            {% static 'images_mobile/image_property_management1.jpg' %} 1170w" class="active"
+    alt="Image 1 " 
+    sizes="(max-width: 1800px) 1700w,
+           (max-width: 768px) 1170w">
+
+<img src="{% static 'images/image_desk2.jpg' %}" alt="Image 2">
+<img src="{% static 'images/image_desk3.jpg' %}" alt="Image 3">
+
+<img 
+    srcset="{% static 'images/image_desk4.png' %} 1700w,
+            {% static 'images_mobile/image_mobile4.jpg' %} 1170w"
+    alt="Image 4" 
+    sizes="(max-width: 1800px) 1700w,
+           (max-width: 768px) 1170w">
+
+<img src="{% static 'images/image_desk5.jpg' %}" alt="Image 5">
+
+<img 
+   srcset="{% static 'images/image_desk6.jpg' %} 1700w,
+           {% static 'images_mobile/image_mobile6.jpg' %} 1170w"
+   alt="Image 6" 
+   sizes="(max-width: 1800px) 1700w,
+       (max-width: 768px) 1170w">
+
+<img src="{% static 'images/image_desk7.jpg' %}" alt="Image 7">
+
+
+ <img 
+   srcset="{% static 'images/image_desk8.jpg' %} 1700w,
+           {% static 'images_mobile/image_mobile8.png' %} 1170w"
+   alt="Image 6" 
+   sizes="(max-width: 1800px) 1700w,
+       (max-width: 768px) 1170w">
+
+       <img 
+       srcset="{% static 'images/image_desk9.jpg' %} 1700w,
+               {% static 'images_mobile/image_mobile9.jpg' %} 1170w"
+       alt="Image 6" 
+       sizes="(max-width: 1800px) 1700w,
+           (max-width: 768px) 1170w">
+
+           <img 
+           srcset="{% static 'images/image_desk10.jpg' %} 1700w,
+                   {% static 'images_mobile/image_mobile10.jpg' %} 1170w"
+           alt="Image 6" 
+           sizes="(max-width: 1800px) 1700w,
+               (max-width: 768px) 1170w">
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-container img');
+        const totalImages = images.length;
+    
+        const nextImage = () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+    
+        setInterval(nextImage, 4000); // Change image every 3 seconds
+    </script>
+    <!-- ############################################################# FIN HEADER ##########################################################-->

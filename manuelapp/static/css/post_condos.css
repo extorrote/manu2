@@ -1,0 +1,186 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #F9FAFB; /* Very light gray background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color:#1f1f1f; /* Light blue gradient */
+  color: gray; /* Dark blue text */
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  animation: fadeInHeader 1s ease-out;
+  }
+  
+  @keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+  .logo{
+    max-width:380px;
+    width:100%;
+    display:flex;
+    margin:auto;
+    margin-top:-100px;/* ESTO LO PUESE PORQUE POR EL WIDTH QUE LE PUSE AL LOGO Y LE DEJE EL HECHGT AUTO , POR DEFECTO ESTA OCUPANDO MUCHO HEIGHT */
+    margin-bottom: -100px;
+}
+
+.logo img{
+    width:100%;
+}
+
+
+  .home-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 2rem;
+    color: #FFFFFF;
+    background-color: #DAA520;
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .home-button:hover {
+    background-color: orange; /* Darker turquoise */
+    transform: scale(1.05);
+  }
+  .fancy-form {
+    max-width: 750px; /* Balanced width for readability */
+    width: 100%;
+    padding: 24px; /* Generous padding for a spacious feel */
+    background-color: #FFFFFF; /* Classic white background */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .form-group {
+    margin-bottom: 24px; /* Ample space between form elements */
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 1.1rem; /* Slightly larger font size for readability */
+    color: #2E3A59; /* Dark slate blue for a professional look */
+    margin-bottom: 10px; /* Space between label and input */
+  }
+  
+  input[type="text"], input[type="number"], input[type="file"], textarea {
+    width: 100%;
+    padding: 16px; /* Comfortable padding */
+    border: 1px solid #DDDDDD; /* Light gray border */
+    border-radius: 8px; /* Rounded corners for input fields */
+    background-color: #F9F9F9; /* Very light gray background */
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #5D9CEC; /* Soft blue for focus state */
+    outline: none;
+    box-shadow: 0 0 8px rgba(93, 156, 236, 0.3); /* Soft blue shadow */
+  }
+  
+  .btn-primary {
+    width: 100%;
+    display: inline-block;
+    padding: 14px 20px; /* Comfortable padding */
+    font-size: 2rem; /* Slightly larger font size for emphasis */
+    color: #FFFFFF;
+    background-color: #DAA520; /* Soft blue button */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  @media screen and (max-width:790px){
+    .btn-primary{
+      width:92%;
+    }
+    @media screen and (max-width:502px){
+      .btn-primary{
+        width:90%;
+      }
+    }
+  }
+  .btn-primary:hover {
+    background-color: green; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+  
+  .form-errors {
+    color: #E74C3C; /* Bright red for error messages */
+    margin-bottom: 24px; /* Space for error messages */
+    font-size: 0.9rem;
+  }
+  
+  .image-group {
+    margin-bottom: 24px; /* Consistent spacing */
+  }
+  
+  .image-input {
+    margin-bottom: 16px; /* Space between image inputs */
+  }
+  
+  .image-input label {
+    display: block;
+    font-size: 1.1rem; /* Larger font size for labels */
+    color: #2E3A59; /* Dark slate blue for consistency */
+    margin-bottom: 10px; /* Space between label and input */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  
+  .animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .animate:nth-child(1) { animation: fadeInUp 1s ease-out 0.2s forwards; }
+  .animate:nth-child(2) { animation: fadeInUp 1s ease-out 0.4s forwards; }
+  .animate:nth-child(3) { animation: fadeInUp 1s ease-out 0.6s forwards; }
+  .animate:nth-child(4) { animation: fadeInUp 1s ease-out 0.8s forwards; }
+  .animate:nth-child(5) { animation: fadeInUp 1s ease-out 1s forwards; }
+  .animate:nth-child(6) { animation: fadeInUp 1s ease-out 1.2s forwards; }
+  .animate:nth-child(7) { animation: fadeInUp 1s ease-out 1.4s forwards; }
+  .animate:nth-child(8) { animation: fadeInUp 1s ease-out 1.6s forwards; }
+  
+  
+  
+  
+  

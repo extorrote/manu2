@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    {%comment%}  META TAGS. {%endcomment%}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+     <!-- Title Tag (Essential for SEO) -->
+     <title>Login Section Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR</title>
+
+     <!-- Meta Description (Important for SEO & Click-Through Rate) -->
+     <meta name="description" content="Discover Landmark PVR, your premier choice for luxury vacation rentals and professional property management in Puerto Vallarta, Mexico. Exclusive beachfront villas & high-end condos.">
+ 
+     <!-- Meta Keywords (Not as important for Google but useful for other search engines) -->
+     <meta name="keywords" content="luxury rentals Puerto Vallarta, vacation rentals Puerto Vallarta, property management Puerto Vallarta, beachfront villas, luxury condos, Landmark PVR">
+ 
+     <!-- Author Information -->
+     <meta name="author" content="www.webdevelopermx.com">
+ 
+     <!-- Robots Meta Tag (Ensures Search Engines Can Crawl & Index the Site) -->
+     <meta name="robots" content="index, follow">
+ 
+     <!-- Open Graph Tags (Optimizes the Website for Facebook and Social Media Sharing) -->
+     <meta property="og:title" content="Luxury Vacation Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+     <meta property="og:description" content="Explore our exclusive collection of luxury vacation rentals and professional property management services in Puerto Vallarta, Mexico.">
+     <meta property="og:image" content="{%static '/images/og_image.png'%}">
+     <meta property="og:url" content="https://www.landmarkvallarta.com">
+     <meta property="og:type" content="website">
+ 
+     <!-- Twitter Card Tags (Optimizes the Website for Twitter Sharing) -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Luxury Rentals & Property Management in Puerto Vallarta | Landmark PVR">
+     <meta name="twitter:description" content="Book a luxury vacation rental in Puerto Vallarta with Landmark PVR. Explore beachfront villas and exclusive properties.">
+     <meta name="twitter:image" content="{%static '/images/og_image.png'%}">
+ 
+     <!-- Local SEO Meta Tags (Helps Search Engines Understand Your Location) -->
+     <meta name="geo.region" content="MX-JAL">
+     <meta name="geo.placename" content="Puerto Vallarta, Jalisco, Mexico">
+     <meta name="geo.position" content="20.6534;-105.2253">
+     <meta name="ICBM" content="20.6534, -105.2253">
+ 
+     <!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+     <link rel="canonical" href="https://www.landmarkvallarta.com">
+ 
+     <!-- Favicon & Web Icons (Ensures Brand Recognition in Browsers and Devices) -->
+     <link rel="icon" type="image/icon" href="{% static 'images/logo_ico.ico'%}">
+     <link rel="apple-touch-icon" href="{% static 'images/logo_ico.ico'%}">
+ 
+     <!-- Structured Data (Schema Markup for Better Search Visibility) -->
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "LodgingBusiness",
+       "name": "Landmark PVR",
+       "url": "https://www.landmarkvallarta.com",
+       "image": "https://www.landmarkvallarta.com/images/logo.png",
+       "description": "Luxury vacation rentals and high-end property management services in Puerto Vallarta, Mexico.",
+       "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "Your Address Here",
+         "addressLocality": "Puerto Vallarta",
+         "addressRegion": "Jalisco",
+         "postalCode": "48300",
+         "addressCountry": "MX"
+       },
+       "geo": {
+         "@type": "GeoCoordinates",
+         "latitude": "20.6534",
+         "longitude": "-105.2253"
+       },
+       "contactPoint": {
+         "@type": "ContactPoint",
+         "telephone": "+17279468985",
+         "contactType": "customer service"
+       }
+     }
+     </script>
+<!-- FIN DE META TAGS -->
+   <style>
+    body{
+      height:100vh;
+      background-image:linear-gradient(#bf8d30,black);
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+    .caja_mayor{
+      max-width:700px;
+      width:100%;
+      height:40vh;
+      display:flex;
+      margin:auto;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .boton_back{
+      
+      max-width:590px;
+      width:100%;
+      height:40px;
+      background-image:linear-gradient(rgba(191, 141, 48, 0.58),black);
+      border-radius:0 0  10px 10px ;  
+      display:flex;
+      margin:auto;  
+      margin-top: 490px;
+     
+      justify-content: center;
+      align-items: center;
+      position:relative;
+    }
+
+    .boton_back:hover{
+      background-color: orange;
+    }
+    @media screen and(max-width:768px){
+      .button_back{
+        width:97%;
+      }
+    }
+
+  
+    .boton_back a{
+      color:#ffffff;
+      text-decoration: none;
+      font-size: 1.5;
+    }
+    
+    .form_login{
+      max-width:600px;
+      width:100%;
+      background-image:linear-gradient(rgba(191, 141, 48, 0.58),black),url(/static/images/fondo-candados.png);
+      background-position: left;
+      position:absolute; 
+      background-repeat: no-repeat;
+      height:30vh;
+      display:flex;
+      margin:auto;
+      justify-content: center;
+      align-items: center;
+      margin-top: 300px;
+      border-radius: 10px;
+      
+    }
+    @media screen and(max-width:768px){
+      .form_login{
+        width:90%;
+      }
+    }
+   .form__login-input-container{
+    display:flex;
+    flex-direction: column;
+   width:300px;
+   justify-content: center;
+   align-items: center;
+   color:white;
+   }
+
+  label,input,button{
+    margin-top: 10px;
+  }
+  input,button{
+    padding:8px 90px;
+    border-radius: 4px;
+  }
+
+  button{
+    background-color: #bf8d30;
+    border:none;
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  button:hover{
+    background-color: orange;
+  }
+
+  .logo{
+    max-width:380px;
+    width:100%;
+    display:flex;
+    margin:auto;
+  margin-top:200px;
+}
+
+.logo img{
+    width:100%;
+}
+  
+  
+    </style>
+   
+</head>
+<body>
+    
+
+    
+<div class="caja_mayor">
+
+   
+<div class="form_login">
+
+  
+  <form method="POST"action="">
+      <div class="form__login-input-container">
+
+    {% csrf_token %}
+   
+ <label for="username"> UserName : </label>
+  <input type="text" name="username"/>
+
+  <label  for="password"> Password : </label>
+ <input   type="password" name="password"/>
+      <button class="btn btn-2" type="submit">LOGIN</button>
+  </div> 
+  </div>
+  
+</form>
+<li class="boton_back"><a href="{%url 'index'%}">GO BACK</a></li>  
+</div><!--form login-->
+</div><!--CAJA MAYOR-->
+<div class="logo"><image src="{%static 'images/logo_property_management.png'%}"></div>
+</body>
+</html>
